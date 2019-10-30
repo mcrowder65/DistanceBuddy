@@ -14,6 +14,7 @@
 		B92E4BC92368E65A002E5966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92E4BC82368E65A002E5966 /* Assets.xcassets */; };
 		B92E4BCC2368E65A002E5966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */; };
 		B92E4BDD236903A9002E5966 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92E4BDC236903A9002E5966 /* HealthKit.framework */; };
+		B92E4BE3236A4579002E5966 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B92E4BCD2368E65A002E5966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92E4BDA236903A8002E5966 /* DistanceBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DistanceBuddy.entitlements; sourceTree = "<group>"; };
 		B92E4BDC236903A9002E5966 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				B92E4BC82368E65A002E5966 /* Assets.xcassets */,
 				B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */,
 				B92E4BCD2368E65A002E5966 /* Info.plist */,
+				B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */,
 			);
 			path = DistanceBuddy;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B92E4BC42368E659002E5966 /* ViewController.swift in Sources */,
+				B92E4BE3236A4579002E5966 /* HealthKitSetupAssistant.swift in Sources */,
 				B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */,
 				B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */,
 			);
