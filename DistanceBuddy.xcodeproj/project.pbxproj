@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4418B48BD888F2C7FF1470 /* Pods_DistanceBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989B391D780FB644EAD0C864 /* Pods_DistanceBuddy.framework */; };
 		B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BBF2368E659002E5966 /* AppDelegate.swift */; };
 		B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BC12368E659002E5966 /* SceneDelegate.swift */; };
 		B92E4BC42368E659002E5966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BC32368E659002E5966 /* ViewController.swift */; };
@@ -15,9 +16,17 @@
 		B92E4BCC2368E65A002E5966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */; };
 		B92E4BDD236903A9002E5966 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92E4BDC236903A9002E5966 /* HealthKit.framework */; };
 		B92E4BE3236A4579002E5966 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */; };
+		B95E60D1236DF42200DCD1C3 /* MileageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */; };
+		B95E60D3236DF47500DCD1C3 /* MileageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */; };
+		B95E60D5236DF82900DCD1C3 /* Mileage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D4236DF82900DCD1C3 /* Mileage.swift */; };
+		B95E60DF236E23EB00DCD1C3 /* DefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60DE236E23EB00DCD1C3 /* DefaultCell.swift */; };
+		B95E60E1236E2B9D00DCD1C3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B95E60E0236E2B9D00DCD1C3 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CF9575F04C081E6E94B4ACC /* Pods-DistanceBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistanceBuddy.release.xcconfig"; path = "Target Support Files/Pods-DistanceBuddy/Pods-DistanceBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		2CDD129C32958408FBF8FB3A /* Pods-DistanceBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistanceBuddy.debug.xcconfig"; path = "Target Support Files/Pods-DistanceBuddy/Pods-DistanceBuddy.debug.xcconfig"; sourceTree = "<group>"; };
+		989B391D780FB644EAD0C864 /* Pods_DistanceBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistanceBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92E4BBC2368E659002E5966 /* DistanceBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92E4BBF2368E659002E5966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B92E4BC12368E659002E5966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +38,11 @@
 		B92E4BDA236903A8002E5966 /* DistanceBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DistanceBuddy.entitlements; sourceTree = "<group>"; };
 		B92E4BDC236903A9002E5966 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTableViewController.swift; sourceTree = "<group>"; };
+		B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTableViewCell.swift; sourceTree = "<group>"; };
+		B95E60D4236DF82900DCD1C3 /* Mileage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mileage.swift; sourceTree = "<group>"; };
+		B95E60DE236E23EB00DCD1C3 /* DefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCell.swift; sourceTree = "<group>"; };
+		B95E60E0236E2B9D00DCD1C3 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B92E4BDD236903A9002E5966 /* HealthKit.framework in Frameworks */,
+				0F4418B48BD888F2C7FF1470 /* Pods_DistanceBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,9 +61,11 @@
 		B92E4BB32368E659002E5966 = {
 			isa = PBXGroup;
 			children = (
+				B95E60E0236E2B9D00DCD1C3 /* Podfile */,
 				B92E4BBE2368E659002E5966 /* DistanceBuddy */,
 				B92E4BBD2368E659002E5966 /* Products */,
 				B92E4BDB236903A9002E5966 /* Frameworks */,
+				C55887782E254C100C97B4F4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +89,10 @@
 				B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */,
 				B92E4BCD2368E65A002E5966 /* Info.plist */,
 				B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */,
+				B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */,
+				B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */,
+				B95E60D4236DF82900DCD1C3 /* Mileage.swift */,
+				B95E60DE236E23EB00DCD1C3 /* DefaultCell.swift */,
 			);
 			path = DistanceBuddy;
 			sourceTree = "<group>";
@@ -80,8 +101,18 @@
 			isa = PBXGroup;
 			children = (
 				B92E4BDC236903A9002E5966 /* HealthKit.framework */,
+				989B391D780FB644EAD0C864 /* Pods_DistanceBuddy.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C55887782E254C100C97B4F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CDD129C32958408FBF8FB3A /* Pods-DistanceBuddy.debug.xcconfig */,
+				0CF9575F04C081E6E94B4ACC /* Pods-DistanceBuddy.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B92E4BD02368E65A002E5966 /* Build configuration list for PBXNativeTarget "DistanceBuddy" */;
 			buildPhases = (
+				5A98B8DF6CFFF496F061CE07 /* [CP] Check Pods Manifest.lock */,
 				B92E4BB82368E659002E5966 /* Sources */,
 				B92E4BB92368E659002E5966 /* Frameworks */,
 				B92E4BBA2368E659002E5966 /* Resources */,
+				47EF40D6F7FEA8829095B346 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,20 +177,67 @@
 			files = (
 				B92E4BCC2368E65A002E5966 /* LaunchScreen.storyboard in Resources */,
 				B92E4BC92368E65A002E5966 /* Assets.xcassets in Resources */,
+				B95E60E1236E2B9D00DCD1C3 /* Podfile in Resources */,
 				B92E4BC72368E659002E5966 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47EF40D6F7FEA8829095B346 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DistanceBuddy/Pods-DistanceBuddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DistanceBuddy/Pods-DistanceBuddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DistanceBuddy/Pods-DistanceBuddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A98B8DF6CFFF496F061CE07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DistanceBuddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B92E4BB82368E659002E5966 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B95E60D1236DF42200DCD1C3 /* MileageTableViewController.swift in Sources */,
+				B95E60DF236E23EB00DCD1C3 /* DefaultCell.swift in Sources */,
 				B92E4BC42368E659002E5966 /* ViewController.swift in Sources */,
+				B95E60D3236DF47500DCD1C3 /* MileageTableViewCell.swift in Sources */,
 				B92E4BE3236A4579002E5966 /* HealthKitSetupAssistant.swift in Sources */,
 				B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */,
+				B95E60D5236DF82900DCD1C3 /* Mileage.swift in Sources */,
 				B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +380,7 @@
 		};
 		B92E4BD12368E65A002E5966 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CDD129C32958408FBF8FB3A /* Pods-DistanceBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DistanceBuddy/DistanceBuddy.entitlements;
@@ -320,6 +401,7 @@
 		};
 		B92E4BD22368E65A002E5966 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF9575F04C081E6E94B4ACC /* Pods-DistanceBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DistanceBuddy/DistanceBuddy.entitlements;

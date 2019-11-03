@@ -8,24 +8,46 @@
 
 import UIKit
 import HealthKit
+import SwiftDate
+
 
 class ViewController: UIViewController {
+    var table: MileageTableViewController?
     let healthStore = HKHealthStore()
-    @IBOutlet weak var totalMilesLabel: UILabel!
-    
+    var running: DefaultCell = DefaultCell(year: 0, month: 0, week: 0) {
+        didSet {
+            self.table?.running = self.running
+        }
+    }
+    var walking: DefaultCell = DefaultCell(year: 0, month: 0, week: 0) {
+        didSet {
+            self.table?.walking = self.walking
+        }
+    }
+    var biking: DefaultCell = DefaultCell(year: 0, month: 0, week: 0) {
+        didSet {
+            self.table?.biking = self.biking
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        totalMilesLabel.text = "0"
         authorizeHealthKit { () in
-            
-            self.getWorkouts { (result: Double) in
-
+            self.getWorkouts(type: .running, completion: { (running: DefaultCell) in
                 DispatchQueue.main.async {
-                    self.totalMilesLabel.text = "\(Int(result))"
+                    self.running = running
                 }
-            }
+            })
+            self.getWorkouts(type: .walking, completion: { (walking: DefaultCell) in
+                DispatchQueue.main.async {
+                    self.walking = walking
+                }
+            })
+            self.getWorkouts(type: .cycling, completion: { (biking: DefaultCell) in
+                DispatchQueue.main.async {
+                    self.biking = biking
+                }
+            })
         }
-        
     }
     
     private func authorizeHealthKit(completion: @escaping () -> Void) {
@@ -48,33 +70,41 @@ class ViewController: UIViewController {
         completion()
       }
     }
-    func getWorkouts(completion: @escaping (Double) -> Void) {
-        
-        let predicate = HKQuery.predicateForWorkouts(with: .running)
+
+    func getWorkouts(type: HKWorkoutActivityType, completion: @escaping (DefaultCell) -> Void) {
+        let predicate = HKQuery.predicateForWorkouts(with: type)
         
         let query = HKSampleQuery(sampleType: HKSampleType.workoutType(), predicate: predicate, limit: 0, sortDescriptors: nil, resultsHandler: {
             (query: HKSampleQuery, results: [HKSample]!, error) -> Void in
-            var total = 0.0
+            let object: DefaultCell = DefaultCell(year: 0, month: 0, week: 0)
             for r in results {
                 guard let result: HKWorkout = r as? HKWorkout else {
                     return
                 }
-                let year = Calendar.current.component(.year, from: result.startDate)
-                let currentYear = Calendar.current.component(.year, from: Date())
-                if year == currentYear {
-                    total += result.totalDistance?.doubleValue(for: HKUnit.mile()) ?? 0.0
+                let value = result.totalDistance?.doubleValue(for: HKUnit.mile()) ?? 0.0
+                if result.startDate.compare(.isThisYear) {
+                    object.year = object.year + value
                 }
-                
+                if result.startDate.compare(.isThisMonth) {
+                    object.month = object.month + value
+                }
+                if  result.startDate.compare(.isThisWeek) {
+                    object.week = object.week + value
+                }
             }
             DispatchQueue.main.async {
-                completion(total)
+                completion(object)
             }
-            
         })
         
         healthStore.execute(query)
     }
 
-
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "totalMileage" {
+                let vc: MileageTableViewController = segue.destination as! MileageTableViewController
+                self.table = vc
+            }
+        }
 }
 

@@ -2,3 +2,8 @@
 DistanceBuddy.xcodeproj/xcuserdata/mcrowder65.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 *.xcbkptlist
 *.xcuserstate
+*.iml
+pods
+.idea/misc.xml
+.idea
+*.xcbkptlist
