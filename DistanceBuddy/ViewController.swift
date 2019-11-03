@@ -73,8 +73,11 @@ class ViewController: UIViewController {
     func getWorkouts(type: HKWorkoutActivityType, completion: @escaping (DefaultCell) -> Void) {
         let predicate = HKQuery.predicateForWorkouts(with: type)
         
-        let query = HKSampleQuery(sampleType: HKSampleType.workoutType(), predicate: predicate, limit: 0, sortDescriptors: nil, resultsHandler: {
-            (_: HKSampleQuery, results: [HKSample]!, _) -> Void in
+        let query = HKSampleQuery(
+            sampleType: HKSampleType.workoutType(),
+            predicate: predicate,
+            limit: 0,
+            sortDescriptors: nil, resultsHandler: { (_: HKSampleQuery, results: [HKSample]!, _) -> Void in
             let object: DefaultCell = DefaultCell(year: 0, month: 0, week: 0)
             for r in results {
                 guard let result: HKWorkout = r as? HKWorkout else {
