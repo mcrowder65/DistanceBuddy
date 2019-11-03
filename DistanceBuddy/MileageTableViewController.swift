@@ -40,11 +40,7 @@ class MileageTableViewController: UITableViewController {
             Mileage(title: "Walking Distance", description: walking.toString()),
             Mileage(title: "Biking Distance", description: biking.toString())
        ]
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.tableFooterView = UIView()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,7 +54,7 @@ class MileageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> MileageTableViewCell {
         let cellIdentifier = "MileageTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MileageTableViewCell else {
-            fatalError("The dequeued cell is not an instance of MileageTableViewCell.")
+            fatalError("The dequeued cell is not an instance of \(cellIdentifier).")
         }
         
         cell.textLabel?.text = self.cells[indexPath.row].title
