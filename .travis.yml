@@ -1,0 +1,10 @@
+language: objective-c
+osx_image: xcode11.1
+xcode_project: DistanceBuddy.xcodeproj # path to your xcodeproj folder
+xcode_scheme: DistanceBuddy
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8
+install: pod install
+
+
+script:
+  - xcodebuild clean build -workspace DistanceBuddy.xcworkspace -scheme DistanceBuddy -sdk iphonesimulator PLATFORM_NAME=iphonesimulator -configuration Release
