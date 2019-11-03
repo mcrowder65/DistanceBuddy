@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'DistanceBuddy' do
     pod 'SwiftDate', '~> 6.0'
+    pod 'SwiftLint'
 end

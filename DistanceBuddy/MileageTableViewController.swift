@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class MileageTableViewController: UITableViewController {
     var running: DefaultCell = DefaultCell(year: 0, month: 0, week: 0) {
         didSet {
@@ -66,6 +65,5 @@ class MileageTableViewController: UITableViewController {
         cell.detailTextLabel?.text =  self.cells[indexPath.row].description
         return cell
     }
-
 
 }

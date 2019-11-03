@@ -10,7 +10,6 @@ import UIKit
 import HealthKit
 import SwiftDate
 
-
 class ViewController: UIViewController {
     var table: MileageTableViewController?
     let healthStore = HKHealthStore()
@@ -75,7 +74,7 @@ class ViewController: UIViewController {
         let predicate = HKQuery.predicateForWorkouts(with: type)
         
         let query = HKSampleQuery(sampleType: HKSampleType.workoutType(), predicate: predicate, limit: 0, sortDescriptors: nil, resultsHandler: {
-            (query: HKSampleQuery, results: [HKSample]!, error) -> Void in
+            (_: HKSampleQuery, results: [HKSample]!, _) -> Void in
             let object: DefaultCell = DefaultCell(year: 0, month: 0, week: 0)
             for r in results {
                 guard let result: HKWorkout = r as? HKWorkout else {
@@ -83,13 +82,13 @@ class ViewController: UIViewController {
                 }
                 let value = result.totalDistance?.doubleValue(for: HKUnit.mile()) ?? 0.0
                 if result.startDate.compare(.isThisYear) {
-                    object.year = object.year + value
+                    object.year += value
                 }
                 if result.startDate.compare(.isThisMonth) {
-                    object.month = object.month + value
+                    object.month += value
                 }
                 if  result.startDate.compare(.isThisWeek) {
-                    object.week = object.week + value
+                    object.week += value
                 }
             }
             DispatchQueue.main.async {
@@ -102,9 +101,8 @@ class ViewController: UIViewController {
 
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "totalMileage" {
-                let vc: MileageTableViewController = segue.destination as! MileageTableViewController
+                let vc: MileageTableViewController = (segue.destination as? MileageTableViewController)!
                 self.table = vc
             }
         }
 }
-
