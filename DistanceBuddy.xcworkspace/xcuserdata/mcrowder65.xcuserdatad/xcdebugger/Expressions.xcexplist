@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ViewController.save(_:):ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MileageTableViewController.tableView(_:cellForRowAt:):MileageTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "individualCell.value(forKeyPath: &quot;startDate&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ViewController.getWorkouts(type:completion:):ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MileageTableViewController.tableView(_:editActionsForRowAt:):MileageTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddDistanceViewController.viewDidLoad():AddDistanceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.startDate.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "textToDate(_:):Utilities.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static MileageModel.workoutTypesToNSData(for:):MileageModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MileageTableViewController.viewWillAppear(_:):MileageTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.cells">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddDistanceViewController.startDateClicked():AddDistanceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "startDate?.text">
+            </PersistentString>
+            <PersistentString
+               value = "Date().toFormat(&quot;MM/dd/YYYY&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "selectedDate.toString()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WorkoutTypeTableViewCell.workoutTypeStatusChanged(_:):WorkoutTypeTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.isOn">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddDistanceViewController.save(_:):AddDistanceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "startDate.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

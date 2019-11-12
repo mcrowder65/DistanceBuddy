@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B92E4BBB2368E659002E5966"
-               BuildableName = "DistanceBuddy.app"
-               BlueprintName = "DistanceBuddy"
+               BlueprintIdentifier = "B979CB08237728AD0084BB9B"
+               BuildableName = "DistanceBuddyTests.xctest"
+               BlueprintName = "DistanceBuddyTests"
                ReferencedContainer = "container:DistanceBuddy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,19 +50,9 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B92E4BBB2368E659002E5966"
-            BuildableName = "DistanceBuddy.app"
-            BlueprintName = "DistanceBuddy"
-            ReferencedContainer = "container:DistanceBuddy.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"

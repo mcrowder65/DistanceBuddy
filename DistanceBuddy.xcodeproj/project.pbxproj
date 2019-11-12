@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0F4418B48BD888F2C7FF1470 /* Pods_DistanceBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989B391D780FB644EAD0C864 /* Pods_DistanceBuddy.framework */; };
+		2B551CF576A8D619651127EB /* Pods_DistanceBuddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91247BB641A08E692386EEE6 /* Pods_DistanceBuddyTests.framework */; };
+		B901E0752371909400EC6E4B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B901E0742371909400EC6E4B /* Utilities.swift */; };
+		B901E07A2371955500EC6E4B /* Workouts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B901E0782371955500EC6E4B /* Workouts.xcdatamodeld */; };
 		B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BBF2368E659002E5966 /* AppDelegate.swift */; };
 		B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BC12368E659002E5966 /* SceneDelegate.swift */; };
 		B92E4BC42368E659002E5966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BC32368E659002E5966 /* ViewController.swift */; };
@@ -18,15 +21,39 @@
 		B92E4BE3236A4579002E5966 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */; };
 		B95E60D1236DF42200DCD1C3 /* MileageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */; };
 		B95E60D3236DF47500DCD1C3 /* MileageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */; };
-		B95E60D5236DF82900DCD1C3 /* Mileage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D4236DF82900DCD1C3 /* Mileage.swift */; };
-		B95E60DF236E23EB00DCD1C3 /* DefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60DE236E23EB00DCD1C3 /* DefaultCell.swift */; };
+		B95E60D5236DF82900DCD1C3 /* MileageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D4236DF82900DCD1C3 /* MileageModel.swift */; };
+		B95E60DF236E23EB00DCD1C3 /* DefaultCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60DE236E23EB00DCD1C3 /* DefaultCellModel.swift */; };
 		B95E60E1236E2B9D00DCD1C3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B95E60E0236E2B9D00DCD1C3 /* Podfile */; };
+		B961A92C236F2ACB0074FFE1 /* AddDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A92B236F2ACB0074FFE1 /* AddDistanceViewController.swift */; };
+		B961A92E236FB1060074FFE1 /* AddDistanceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A92D236FB1060074FFE1 /* AddDistanceDelegate.swift */; };
+		B961A9302370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */; };
+		B961A9322370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */; };
+		B961A9342370F29C0074FFE1 /* WorkoutTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */; };
+		B961A9362370F6070074FFE1 /* WorkoutTypeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9352370F6070074FFE1 /* WorkoutTypeDelegate.swift */; };
+		B979CB0C237728AD0084BB9B /* DistanceBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B979CB0B237728AD0084BB9B /* DistanceBuddyTests.swift */; };
+		B979CB14237728E60084BB9B /* UtilitiesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B979CB13237728E60084BB9B /* UtilitiesTest.swift */; };
+		B9F3BFC42372E66700AAECC9 /* MileageDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3BFC32372E66700AAECC9 /* MileageDefaultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B979CB0E237728AD0084BB9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92E4BB42368E659002E5966 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B92E4BBB2368E659002E5966;
+			remoteInfo = DistanceBuddy;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		030AF64AD29978062CB61E6B /* Pods-DistanceBuddyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistanceBuddyTests.release.xcconfig"; path = "Target Support Files/Pods-DistanceBuddyTests/Pods-DistanceBuddyTests.release.xcconfig"; sourceTree = "<group>"; };
 		0CF9575F04C081E6E94B4ACC /* Pods-DistanceBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistanceBuddy.release.xcconfig"; path = "Target Support Files/Pods-DistanceBuddy/Pods-DistanceBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		2CDD129C32958408FBF8FB3A /* Pods-DistanceBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistanceBuddy.debug.xcconfig"; path = "Target Support Files/Pods-DistanceBuddy/Pods-DistanceBuddy.debug.xcconfig"; sourceTree = "<group>"; };
+		2E39A1752AE91A64FD7E2D27 /* Pods-DistanceBuddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistanceBuddyTests.debug.xcconfig"; path = "Target Support Files/Pods-DistanceBuddyTests/Pods-DistanceBuddyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		91247BB641A08E692386EEE6 /* Pods_DistanceBuddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistanceBuddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		989B391D780FB644EAD0C864 /* Pods_DistanceBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistanceBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B901E0742371909400EC6E4B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		B901E0792371955500EC6E4B /* Workouts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Workouts.xcdatamodel; sourceTree = "<group>"; };
 		B92E4BBC2368E659002E5966 /* DistanceBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92E4BBF2368E659002E5966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B92E4BC12368E659002E5966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,9 +67,20 @@
 		B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
 		B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTableViewController.swift; sourceTree = "<group>"; };
 		B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTableViewCell.swift; sourceTree = "<group>"; };
-		B95E60D4236DF82900DCD1C3 /* Mileage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mileage.swift; sourceTree = "<group>"; };
-		B95E60DE236E23EB00DCD1C3 /* DefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCell.swift; sourceTree = "<group>"; };
+		B95E60D4236DF82900DCD1C3 /* MileageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageModel.swift; sourceTree = "<group>"; };
+		B95E60DE236E23EB00DCD1C3 /* DefaultCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCellModel.swift; sourceTree = "<group>"; };
 		B95E60E0236E2B9D00DCD1C3 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B961A92B236F2ACB0074FFE1 /* AddDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDistanceViewController.swift; sourceTree = "<group>"; };
+		B961A92D236FB1060074FFE1 /* AddDistanceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDistanceDelegate.swift; sourceTree = "<group>"; };
+		B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeTableViewController.swift; sourceTree = "<group>"; };
+		B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeTableViewCell.swift; sourceTree = "<group>"; };
+		B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeModel.swift; sourceTree = "<group>"; };
+		B961A9352370F6070074FFE1 /* WorkoutTypeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeDelegate.swift; sourceTree = "<group>"; };
+		B979CB09237728AD0084BB9B /* DistanceBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistanceBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B979CB0B237728AD0084BB9B /* DistanceBuddyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceBuddyTests.swift; sourceTree = "<group>"; };
+		B979CB0D237728AD0084BB9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B979CB13237728E60084BB9B /* UtilitiesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UtilitiesTest.swift; path = /Users/mcrowder65/DistanceBuddy/DistanceBuddyTests/UtilitiesTest.swift; sourceTree = "<absolute>"; };
+		B9F3BFC32372E66700AAECC9 /* MileageDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageDefaultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +93,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B979CB06237728AD0084BB9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B551CF576A8D619651127EB /* Pods_DistanceBuddyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +109,7 @@
 			children = (
 				B95E60E0236E2B9D00DCD1C3 /* Podfile */,
 				B92E4BBE2368E659002E5966 /* DistanceBuddy */,
+				B979CB0A237728AD0084BB9B /* DistanceBuddyTests */,
 				B92E4BBD2368E659002E5966 /* Products */,
 				B92E4BDB236903A9002E5966 /* Frameworks */,
 				C55887782E254C100C97B4F4 /* Pods */,
@@ -73,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B92E4BBC2368E659002E5966 /* DistanceBuddy.app */,
+				B979CB09237728AD0084BB9B /* DistanceBuddyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,9 +138,18 @@
 				B92E4BCD2368E65A002E5966 /* Info.plist */,
 				B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */,
 				B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */,
+				B9F3BFC32372E66700AAECC9 /* MileageDefaultTableViewCell.swift */,
 				B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */,
-				B95E60D4236DF82900DCD1C3 /* Mileage.swift */,
-				B95E60DE236E23EB00DCD1C3 /* DefaultCell.swift */,
+				B95E60D4236DF82900DCD1C3 /* MileageModel.swift */,
+				B95E60DE236E23EB00DCD1C3 /* DefaultCellModel.swift */,
+				B961A92B236F2ACB0074FFE1 /* AddDistanceViewController.swift */,
+				B961A92D236FB1060074FFE1 /* AddDistanceDelegate.swift */,
+				B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */,
+				B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */,
+				B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */,
+				B961A9352370F6070074FFE1 /* WorkoutTypeDelegate.swift */,
+				B901E0742371909400EC6E4B /* Utilities.swift */,
+				B901E0782371955500EC6E4B /* Workouts.xcdatamodeld */,
 			);
 			path = DistanceBuddy;
 			sourceTree = "<group>";
@@ -102,8 +159,19 @@
 			children = (
 				B92E4BDC236903A9002E5966 /* HealthKit.framework */,
 				989B391D780FB644EAD0C864 /* Pods_DistanceBuddy.framework */,
+				91247BB641A08E692386EEE6 /* Pods_DistanceBuddyTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B979CB0A237728AD0084BB9B /* DistanceBuddyTests */ = {
+			isa = PBXGroup;
+			children = (
+				B979CB13237728E60084BB9B /* UtilitiesTest.swift */,
+				B979CB0B237728AD0084BB9B /* DistanceBuddyTests.swift */,
+				B979CB0D237728AD0084BB9B /* Info.plist */,
+			);
+			path = DistanceBuddyTests;
 			sourceTree = "<group>";
 		};
 		C55887782E254C100C97B4F4 /* Pods */ = {
@@ -111,6 +179,8 @@
 			children = (
 				2CDD129C32958408FBF8FB3A /* Pods-DistanceBuddy.debug.xcconfig */,
 				0CF9575F04C081E6E94B4ACC /* Pods-DistanceBuddy.release.xcconfig */,
+				2E39A1752AE91A64FD7E2D27 /* Pods-DistanceBuddyTests.debug.xcconfig */,
+				030AF64AD29978062CB61E6B /* Pods-DistanceBuddyTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -138,6 +208,26 @@
 			productReference = B92E4BBC2368E659002E5966 /* DistanceBuddy.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B979CB08237728AD0084BB9B /* DistanceBuddyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B979CB12237728AE0084BB9B /* Build configuration list for PBXNativeTarget "DistanceBuddyTests" */;
+			buildPhases = (
+				01E7D8CA9124F2370A02DC8D /* [CP] Check Pods Manifest.lock */,
+				B979CB05237728AD0084BB9B /* Sources */,
+				B979CB06237728AD0084BB9B /* Frameworks */,
+				B979CB07237728AD0084BB9B /* Resources */,
+				2BE6725008A03D6069F844A2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B979CB0F237728AD0084BB9B /* PBXTargetDependency */,
+			);
+			name = DistanceBuddyTests;
+			productName = DistanceBuddyTests;
+			productReference = B979CB09237728AD0084BB9B /* DistanceBuddyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -150,6 +240,10 @@
 				TargetAttributes = {
 					B92E4BBB2368E659002E5966 = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					B979CB08237728AD0084BB9B = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = B92E4BBB2368E659002E5966;
 					};
 				};
 			};
@@ -167,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				B92E4BBB2368E659002E5966 /* DistanceBuddy */,
+				B979CB08237728AD0084BB9B /* DistanceBuddyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -183,9 +278,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B979CB07237728AD0084BB9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01E7D8CA9124F2370A02DC8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DistanceBuddyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BE6725008A03D6069F844A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DistanceBuddyTests/Pods-DistanceBuddyTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DistanceBuddyTests/Pods-DistanceBuddyTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DistanceBuddyTests/Pods-DistanceBuddyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		47EF40D6F7FEA8829095B346 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,17 +391,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				B95E60D1236DF42200DCD1C3 /* MileageTableViewController.swift in Sources */,
-				B95E60DF236E23EB00DCD1C3 /* DefaultCell.swift in Sources */,
+				B961A9322370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift in Sources */,
+				B961A92E236FB1060074FFE1 /* AddDistanceDelegate.swift in Sources */,
+				B901E0752371909400EC6E4B /* Utilities.swift in Sources */,
+				B95E60DF236E23EB00DCD1C3 /* DefaultCellModel.swift in Sources */,
+				B961A92C236F2ACB0074FFE1 /* AddDistanceViewController.swift in Sources */,
 				B92E4BC42368E659002E5966 /* ViewController.swift in Sources */,
+				B961A9302370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift in Sources */,
+				B961A9342370F29C0074FFE1 /* WorkoutTypeModel.swift in Sources */,
 				B95E60D3236DF47500DCD1C3 /* MileageTableViewCell.swift in Sources */,
 				B92E4BE3236A4579002E5966 /* HealthKitSetupAssistant.swift in Sources */,
+				B901E07A2371955500EC6E4B /* Workouts.xcdatamodeld in Sources */,
+				B961A9362370F6070074FFE1 /* WorkoutTypeDelegate.swift in Sources */,
 				B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */,
-				B95E60D5236DF82900DCD1C3 /* Mileage.swift in Sources */,
+				B95E60D5236DF82900DCD1C3 /* MileageModel.swift in Sources */,
 				B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */,
+				B9F3BFC42372E66700AAECC9 /* MileageDefaultTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B979CB05237728AD0084BB9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B979CB14237728E60084BB9B /* UtilitiesTest.swift in Sources */,
+				B979CB0C237728AD0084BB9B /* DistanceBuddyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B979CB0F237728AD0084BB9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B92E4BBB2368E659002E5966 /* DistanceBuddy */;
+			targetProxy = B979CB0E237728AD0084BB9B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B92E4BC52368E659002E5966 /* Main.storyboard */ = {
@@ -438,6 +605,50 @@
 			};
 			name = Release;
 		};
+		B979CB10237728AE0084BB9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E39A1752AE91A64FD7E2D27 /* Pods-DistanceBuddyTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3B8L56Y75;
+				INFOPLIST_FILE = DistanceBuddyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.matt.DistanceBuddyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DistanceBuddy.app/DistanceBuddy";
+			};
+			name = Debug;
+		};
+		B979CB11237728AE0084BB9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 030AF64AD29978062CB61E6B /* Pods-DistanceBuddyTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3B8L56Y75;
+				INFOPLIST_FILE = DistanceBuddyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.matt.DistanceBuddyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DistanceBuddy.app/DistanceBuddy";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -459,7 +670,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B979CB12237728AE0084BB9B /* Build configuration list for PBXNativeTarget "DistanceBuddyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B979CB10237728AE0084BB9B /* Debug */,
+				B979CB11237728AE0084BB9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B901E0782371955500EC6E4B /* Workouts.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B901E0792371955500EC6E4B /* Workouts.xcdatamodel */,
+			);
+			currentVersion = B901E0792371955500EC6E4B /* Workouts.xcdatamodel */;
+			path = Workouts.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B92E4BB42368E659002E5966 /* Project object */;
 }
