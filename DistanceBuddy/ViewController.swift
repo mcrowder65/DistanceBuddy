@@ -71,7 +71,7 @@ class ViewController: UIViewController, AddDistanceDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         authorizeHealthKit { () in
-            self.getWorkouts(type: .running, completion: { (running: DefaultCellModel, walking: DefaultCellModel, cycling: DefaultCellModel) in
+            self.getWorkouts(completion: { (running: DefaultCellModel, walking: DefaultCellModel, cycling: DefaultCellModel) in
                 DispatchQueue.main.async {
                     self.running = running
                     self.walking = walking
@@ -80,62 +80,47 @@ class ViewController: UIViewController, AddDistanceDelegate {
             })
         }
     }
-    
-    func getWorkouts(type: HKWorkoutActivityType, completion: @escaping (DefaultCellModel, DefaultCellModel, DefaultCellModel) -> Void) {
-        let running = DefaultCellModel(title: "Running Distance", year: 0, month: 0, week: 0)
-        let walking = DefaultCellModel(title: "Walking Distance", year: 0, month: 0, week: 0)
-        let cycling = DefaultCellModel(title: "Cycling Distance", year: 0, month: 0, week: 0)
-        let query = HKSampleQuery(
-            sampleType: HKSampleType.workoutType(),
-            predicate: nil,
-            limit: 0,
-            sortDescriptors: nil, resultsHandler: { (_: HKSampleQuery, results: [HKSample]!, _) -> Void in
-            for r in results {
-                guard let result: HKWorkout = r as? HKWorkout else {
-                    return
-                }
-                let value = result.totalDistance?.doubleValue(for: HKUnit.mile()) ?? 0.0
-               
-                if result.startDate.compare(.isThisYear) {
-                    if result.workoutActivityType == .running {
-                        running.year += value
-                    }
-                    if result.workoutActivityType == .walking {
-                        walking.year += value
-                    }
-                    if result.workoutActivityType == .cycling {
-                        cycling.year += value
-                    }
-                }
-                if result.startDate.compare(.isThisMonth) {
-                    if result.workoutActivityType == .running {
-                        running.month += value
-                    }
-                    if result.workoutActivityType == .walking {
-                        walking.month += value
-                    }
-                    if result.workoutActivityType == .cycling {
-                        cycling.month += value
-                    }
-                }
-                if  result.startDate.compare(.isThisWeek) {
-                    if result.workoutActivityType == .running {
-                        running.week += value
-                    }
-                    if result.workoutActivityType == .walking {
-                        walking.week += value
-                    }
-                    if result.workoutActivityType == .cycling {
-                        cycling.week += value
-                    }
-                }
-            }
-            DispatchQueue.main.async {
-                completion(running, walking, cycling)
-            }
-        })
-        
-        healthStore.execute(query)
+    func getWorkouts(completion: @escaping (DefaultCellModel, DefaultCellModel, DefaultCellModel) -> Void) {
+        let distances: [[String: Any]] = [
+            [ "type": HKWorkoutActivityType.running, "time": "year" ],
+            [ "type": HKWorkoutActivityType.running, "time": "month" ],
+            [ "type": HKWorkoutActivityType.running, "time": "week" ],
+            [ "type": HKWorkoutActivityType.walking, "time": "year" ],
+            [ "type": HKWorkoutActivityType.walking, "time": "month" ],
+            [ "type": HKWorkoutActivityType.walking, "time": "week" ],
+            [ "type": HKWorkoutActivityType.cycling, "time": "year" ],
+            [ "type": HKWorkoutActivityType.cycling, "time": "month" ],
+            [ "type": HKWorkoutActivityType.cycling, "time": "week" ]
+        ]
+        Promises.all(
+           distances.map({ (Dictionary) -> Promise<Double> in
+               return Promise<Double> { fulfill, _ in
+                   var startDate = Date()
+                   if Dictionary["time"] as? String == "year" {
+                     startDate = Date(year: Date().year, month: 1, day: 1, hour: 0, minute: 0)
+                   } else if Dictionary["time"] as? String == "month" {
+                     startDate = Date(year: Date().year, month: Date().month, day: 1, hour: 0, minute: 0)
+                   } else if Dictionary["time"] as? String == "week" {
+                     startDate = Date(year: Date().year, month: Date().month, day: Date().firstDayOfWeek, hour: 0, minute: 0)
+                   }
+                   let type = Dictionary["type"] as! HKWorkoutActivityType
+                   getCustomWorkout(
+                       type: type,
+                       startDate: startDate,
+                       endDate: Date(),
+                       completion: { (Double) in fulfill(Double) }
+                   )
+               }
+           }
+       )).then { results in
+        DispatchQueue.main.async {
+            completion(
+                DefaultCellModel(title: "Running Distance", year: results[0], month: results[1], week: results[2]),
+                DefaultCellModel(title: "Walking Distance", year: results[3], month: results[4], week: results[5]),
+                DefaultCellModel(title: "Cycling Distance", year: results[6], month: results[7], week: results[8])
+            )
+        }
+       }
     }
 
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
