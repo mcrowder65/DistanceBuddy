@@ -8,6 +8,8 @@
 
 import Foundation
 import HealthKit
+import Promises
+
 private let dateFormat: String = "MM/dd/yyyy"
 private let healthStore = HKHealthStore()
 func getWorkoutType(for workoutType: String) -> HKWorkoutActivityType {
@@ -85,3 +87,46 @@ func getCustomWorkout(type: HKWorkoutActivityType, startDate: Date, endDate: Dat
        
        healthStore.execute(query)
    }
+
+func getWorkouts(completion: @escaping (DefaultCellModel, DefaultCellModel, DefaultCellModel) -> Void) {
+    let distances: [[String: Any]] = [
+        [ "type": HKWorkoutActivityType.running, "time": "year" ],
+        [ "type": HKWorkoutActivityType.running, "time": "month" ],
+        [ "type": HKWorkoutActivityType.running, "time": "week" ],
+        [ "type": HKWorkoutActivityType.walking, "time": "year" ],
+        [ "type": HKWorkoutActivityType.walking, "time": "month" ],
+        [ "type": HKWorkoutActivityType.walking, "time": "week" ],
+        [ "type": HKWorkoutActivityType.cycling, "time": "year" ],
+        [ "type": HKWorkoutActivityType.cycling, "time": "month" ],
+        [ "type": HKWorkoutActivityType.cycling, "time": "week" ]
+    ]
+    Promises.all(
+       distances.map({ (Dictionary) -> Promise<Double> in
+           return Promise<Double> { fulfill, _ in
+               var startDate = Date()
+               if Dictionary["time"] as? String == "year" {
+                 startDate = Date(year: Date().year, month: 1, day: 1, hour: 0, minute: 0)
+               } else if Dictionary["time"] as? String == "month" {
+                 startDate = Date(year: Date().year, month: Date().month, day: 1, hour: 0, minute: 0)
+               } else if Dictionary["time"] as? String == "week" {
+                 startDate = Date(year: Date().year, month: Date().month, day: Date().firstDayOfWeek, hour: 0, minute: 0)
+               }
+               let type = Dictionary["type"] as! HKWorkoutActivityType
+               getCustomWorkout(
+                   type: type,
+                   startDate: startDate,
+                   endDate: Date(),
+                   completion: { (Double) in fulfill(Double) }
+               )
+           }
+       }
+   )).then { results in
+    DispatchQueue.main.async {
+        completion(
+            DefaultCellModel(title: "Running Distance", year: results[0], month: results[1], week: results[2]),
+            DefaultCellModel(title: "Walking Distance", year: results[3], month: results[4], week: results[5]),
+            DefaultCellModel(title: "Cycling Distance", year: results[6], month: results[7], week: results[8])
+        )
+    }
+   }
+}
