@@ -18,7 +18,6 @@
 		B92E4BC92368E65A002E5966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92E4BC82368E65A002E5966 /* Assets.xcassets */; };
 		B92E4BCC2368E65A002E5966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */; };
 		B92E4BDD236903A9002E5966 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92E4BDC236903A9002E5966 /* HealthKit.framework */; };
-		B92E4BE3236A4579002E5966 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */; };
 		B95E60D1236DF42200DCD1C3 /* MileageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */; };
 		B95E60D3236DF47500DCD1C3 /* MileageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */; };
 		B95E60D5236DF82900DCD1C3 /* MileageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D4236DF82900DCD1C3 /* MileageModel.swift */; };
@@ -64,7 +63,6 @@
 		B92E4BCD2368E65A002E5966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92E4BDA236903A8002E5966 /* DistanceBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DistanceBuddy.entitlements; sourceTree = "<group>"; };
 		B92E4BDC236903A9002E5966 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
 		B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTableViewController.swift; sourceTree = "<group>"; };
 		B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageTableViewCell.swift; sourceTree = "<group>"; };
 		B95E60D4236DF82900DCD1C3 /* MileageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageModel.swift; sourceTree = "<group>"; };
@@ -128,26 +126,14 @@
 		B92E4BBE2368E659002E5966 /* DistanceBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				B97314F2238201E4002901DB /* Storyboards */,
+				B97314F1238201D9002901DB /* Cells */,
+				B97314F023820177002901DB /* Delegates */,
+				B97314EF23820117002901DB /* View Controllers */,
+				B97314EE238200C5002901DB /* Models */,
 				B92E4BDA236903A8002E5966 /* DistanceBuddy.entitlements */,
-				B92E4BBF2368E659002E5966 /* AppDelegate.swift */,
-				B92E4BC12368E659002E5966 /* SceneDelegate.swift */,
-				B92E4BC32368E659002E5966 /* ViewController.swift */,
-				B92E4BC52368E659002E5966 /* Main.storyboard */,
 				B92E4BC82368E65A002E5966 /* Assets.xcassets */,
-				B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */,
 				B92E4BCD2368E65A002E5966 /* Info.plist */,
-				B92E4BE2236A4579002E5966 /* HealthKitSetupAssistant.swift */,
-				B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */,
-				B9F3BFC32372E66700AAECC9 /* MileageDefaultTableViewCell.swift */,
-				B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */,
-				B95E60D4236DF82900DCD1C3 /* MileageModel.swift */,
-				B95E60DE236E23EB00DCD1C3 /* DefaultCellModel.swift */,
-				B961A92B236F2ACB0074FFE1 /* AddDistanceViewController.swift */,
-				B961A92D236FB1060074FFE1 /* AddDistanceDelegate.swift */,
-				B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */,
-				B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */,
-				B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */,
-				B961A9352370F6070074FFE1 /* WorkoutTypeDelegate.swift */,
 				B901E0742371909400EC6E4B /* Utilities.swift */,
 				B901E0782371955500EC6E4B /* Workouts.xcdatamodeld */,
 			);
@@ -162,6 +148,57 @@
 				91247BB641A08E692386EEE6 /* Pods_DistanceBuddyTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B97314EE238200C5002901DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */,
+				B95E60DE236E23EB00DCD1C3 /* DefaultCellModel.swift */,
+				B95E60D4236DF82900DCD1C3 /* MileageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B97314EF23820117002901DB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B92E4BC32368E659002E5966 /* ViewController.swift */,
+				B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */,
+				B961A92B236F2ACB0074FFE1 /* AddDistanceViewController.swift */,
+				B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B97314F023820177002901DB /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B92E4BBF2368E659002E5966 /* AppDelegate.swift */,
+				B92E4BC12368E659002E5966 /* SceneDelegate.swift */,
+				B961A92D236FB1060074FFE1 /* AddDistanceDelegate.swift */,
+				B961A9352370F6070074FFE1 /* WorkoutTypeDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		B97314F1238201D9002901DB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B95E60D2236DF47500DCD1C3 /* MileageTableViewCell.swift */,
+				B9F3BFC32372E66700AAECC9 /* MileageDefaultTableViewCell.swift */,
+				B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B97314F2238201E4002901DB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B92E4BC52368E659002E5966 /* Main.storyboard */,
+				B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		B979CB0A237728AD0084BB9B /* DistanceBuddyTests */ = {
@@ -400,7 +437,6 @@
 				B961A9302370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift in Sources */,
 				B961A9342370F29C0074FFE1 /* WorkoutTypeModel.swift in Sources */,
 				B95E60D3236DF47500DCD1C3 /* MileageTableViewCell.swift in Sources */,
-				B92E4BE3236A4579002E5966 /* HealthKitSetupAssistant.swift in Sources */,
 				B901E07A2371955500EC6E4B /* Workouts.xcdatamodeld in Sources */,
 				B961A9362370F6070074FFE1 /* WorkoutTypeDelegate.swift in Sources */,
 				B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */,

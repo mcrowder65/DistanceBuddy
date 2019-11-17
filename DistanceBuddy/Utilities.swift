@@ -44,23 +44,6 @@ func dateToText(_ date: Date?) -> String {
     return (date ?? Date()).toFormat(dateFormat)
 }
 
-func authorizeHealthKit(completion: @escaping () -> Void) {
-  HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
-        
-    guard authorized else {
-      let baseMessage = "HealthKit Authorization Failed"
-      if let error = error {
-        print("\(baseMessage). Reason: \(error.localizedDescription)")
-      } else {
-        print(baseMessage)
-      }
-      return
-    }
-    print("HealthKit Successfully Authorized.")
-    completion()
-  }
-}
-
 func getCustomWorkout(type: HKWorkoutActivityType, startDate: Date, endDate: Date?, completion: @escaping (Double) -> Void) {
        let predicate = HKQuery.predicateForWorkouts(with: type)
        
@@ -129,4 +112,22 @@ func getWorkouts(completion: @escaping (DefaultCellModel, DefaultCellModel, Defa
         )
     }
    }
+}
+private enum HealthkitSetupError: Error {
+  case notAvailableOnDevice
+  case dataTypeNotAvailable
+}
+func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Swift.Void) {
+  guard HKHealthStore.isHealthDataAvailable() else {
+    completion(false, HealthkitSetupError.notAvailableOnDevice)
+    return
+  }
+  
+  let workouts = HKSampleType.workoutType()
+      
+  let healthKitTypesToRead: Set<HKObjectType> = [workouts]
+  HKHealthStore().requestAuthorization(toShare: nil,
+                                       read: healthKitTypesToRead) { (success, error) in
+    completion(success, error)
+  }
 }

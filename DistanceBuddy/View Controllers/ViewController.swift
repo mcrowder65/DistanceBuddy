@@ -69,7 +69,7 @@ class ViewController: UIViewController, AddDistanceDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        authorizeHealthKit { () in
+        authorizeHealthKit { (_, _) in
             getWorkouts(completion: { (running: DefaultCellModel, walking: DefaultCellModel, cycling: DefaultCellModel) in
                 DispatchQueue.main.async {
                     self.running = running
