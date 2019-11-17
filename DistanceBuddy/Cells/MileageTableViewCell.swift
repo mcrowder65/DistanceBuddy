@@ -9,10 +9,10 @@
 import UIKit
 
 class MileageTableViewCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var startDateLabel: UILabel!
-    @IBOutlet weak var endDateLabel: UILabel!
-    @IBOutlet weak var milesLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var startDateLabel: UILabel!
+    @IBOutlet var endDateLabel: UILabel!
+    @IBOutlet var milesLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -22,5 +22,4 @@ class MileageTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

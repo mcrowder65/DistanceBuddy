@@ -3,12 +3,14 @@ PODS:
   - PromisesSwift (1.2.8):
     - PromisesObjC (= 1.2.8)
   - SwiftDate (6.1.0)
+  - SwiftFormat/CLI (0.40.14)
   - SwiftLint (0.36.0)
   - SwiftyPickerPopover (6.6.6)
 
 DEPENDENCIES:
   - PromisesSwift
   - SwiftDate (~> 6.0)
+  - SwiftFormat/CLI
   - SwiftLint
   - SwiftyPickerPopover
 
@@ -17,6 +19,7 @@ SPEC REPOS:
     - PromisesObjC
     - PromisesSwift
     - SwiftDate
+    - SwiftFormat
     - SwiftLint
     - SwiftyPickerPopover
 
@@ -24,9 +27,10 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  SwiftFormat: 21c9c3c748d5fcece493d8610eee23df15393458
   SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
   SwiftyPickerPopover: a402960a6687c911ffcb4e9fb282a1bc61186ab4
 
-PODFILE CHECKSUM: db7616f27c9ebc771f65d80576bc91acbe3fb441
+PODFILE CHECKSUM: 6f01d9ca4c804992e4ffcba410ce1383d344c545
 
 COCOAPODS: 1.8.4

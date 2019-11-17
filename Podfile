@@ -7,6 +7,7 @@ def shared_pods
     pod 'SwiftLint'
     pod 'SwiftyPickerPopover'
     pod 'PromisesSwift'
+    pod 'SwiftFormat/CLI'
 end
 target 'DistanceBuddy' do
     shared_pods

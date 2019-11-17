@@ -230,6 +230,7 @@
 			buildConfigurationList = B92E4BD02368E65A002E5966 /* Build configuration list for PBXNativeTarget "DistanceBuddy" */;
 			buildPhases = (
 				5A98B8DF6CFFF496F061CE07 /* [CP] Check Pods Manifest.lock */,
+				B97314F523820781002901DB /* ShellScript */,
 				B92E4BB82368E659002E5966 /* Sources */,
 				B92E4BB92368E659002E5966 /* Frameworks */,
 				B92E4BBA2368E659002E5966 /* Resources */,
@@ -419,6 +420,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		B97314F523820781002901DB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPods/SwiftFormat/CommandLineTool/swiftformat .\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -6,8 +6,8 @@
 //  Copyright © 2019 Matt. All rights reserved.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 class DefaultCellModel {
     var year: Double = 0
@@ -20,12 +20,12 @@ class DefaultCellModel {
         self.month = month
         self.week = week
     }
-    
+
     func asTableViewCell(_ cell: MileageDefaultTableViewCell) -> MileageDefaultTableViewCell {
-        cell.titleLabel?.text = self.title
-        cell.yearValueLabel?.text = String(Int(self.year))
-        cell.monthValueLabel?.text = String(Int(self.month))
-        cell.weekValueLabel?.text = String(Int(self.week))
+        cell.titleLabel?.text = title
+        cell.yearValueLabel?.text = String(Int(year))
+        cell.monthValueLabel?.text = String(Int(month))
+        cell.weekValueLabel?.text = String(Int(week))
         return cell
     }
 }

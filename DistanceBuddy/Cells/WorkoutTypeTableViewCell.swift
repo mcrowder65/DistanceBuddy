@@ -11,26 +11,24 @@ import UIKit
 class WorkoutTypeTableViewCell: UITableViewCell {
     weak var delegate: WorkoutTypeDelegate!
     var cell: WorkoutTypeModel!
-    @IBOutlet weak var workoutTitle: UILabel!
-    @IBOutlet weak var workoutTypeStatus: UISwitch!
-    
+    @IBOutlet var workoutTitle: UILabel!
+    @IBOutlet var workoutTypeStatus: UISwitch!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
 
     @IBAction func workoutTypeStatusChanged(_ sender: UISwitch) {
         workoutTypeStatus.setOn(sender.isOn, animated: true)
-        self.delegate.statusChangedForCell(
-            cell: WorkoutTypeModel(title: self.cell.title, status: sender.isOn, index: self.cell.index)
+        delegate.statusChangedForCell(
+            cell: WorkoutTypeModel(title: cell.title, status: sender.isOn, index: cell.index)
         )
-        
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
 
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
 }
