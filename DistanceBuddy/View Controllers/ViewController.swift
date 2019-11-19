@@ -12,43 +12,7 @@ import Promises
 import SwiftDate
 import UIKit
 
-class ViewController: UIViewController, AddDistanceDelegate {
-    func distanceWasAdded(description: String, startDate: Date, endDate: Date?, workoutTypes: [WorkoutTypeModel]) {
-        let mileage = MileageModel(
-            title: description,
-            workoutTypes: workoutTypes,
-            startDate: startDate,
-            endDate: endDate ?? nil
-        )
-        save(mileage)
-    }
-
-    func save(_ mileage: MileageModel) {
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-
-        let managedContext = appDelegate.persistentContainer.viewContext
-
-        let entity = NSEntityDescription.entity(forEntityName: "Mileage",
-                                                in: managedContext)!
-
-        let data = NSManagedObject(entity: entity, insertInto: managedContext)
-
-        data.setValue(mileage.title, forKeyPath: "title")
-        data.setValue(mileage.workoutTypesAsString(), forKeyPath: "workoutTypes")
-        data.setValue(mileage.startDate, forKeyPath: "startDate")
-        data.setValue(mileage.endDate, forKeyPath: "endDate")
-
-        do {
-            try managedContext.save()
-            table?.cells.append(data)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-    }
-
+class ViewController: UIViewController {
     var table: MileageTableViewController?
     var addDistance: AddDistanceViewController?
 
@@ -87,11 +51,6 @@ class ViewController: UIViewController, AddDistanceDelegate {
         if segue.identifier == "totalMileage" {
             let vc: MileageTableViewController = (segue.destination as? MileageTableViewController)!
             table = vc
-        } else if segue.identifier == "addDistance" {
-            if let destVC = segue.destination as? UINavigationController,
-                let targetController = destVC.topViewController as? AddDistanceViewController {
-                targetController.delegate = self
-            }
         }
     }
 }

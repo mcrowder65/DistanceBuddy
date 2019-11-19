@@ -7,15 +7,17 @@
 //
 
 import CoreData
+import FirebaseFirestore
 import Foundation
 import Promises
-
-class MileageModel {
+class MileageModel: FirebaseModel {
     var title: String
     var workoutTypes: [WorkoutTypeModel]
     var startDate: Date
     var endDate: Date?
     var miles: String?
+    var userId: String?
+    var id: String?
     init(title: String, workoutTypes: [WorkoutTypeModel], startDate: Date, endDate: Date? = Date()) {
         self.title = title
         self.workoutTypes = workoutTypes
@@ -23,17 +25,29 @@ class MileageModel {
         self.endDate = endDate
     }
 
-    init(_ nsManagedObject: NSManagedObject) {
-        title = nsManagedObject.value(forKeyPath: "title") as? String ?? "Title was nil"
-        startDate = nsManagedObject.value(forKeyPath: "startDate") as? Date ?? Date()
-        endDate = nsManagedObject.value(forKeyPath: "endDate") as? Date ?? nil
-        workoutTypes = (nsManagedObject.value(forKeyPath: "workoutTypes") as? String)?
-            .components(separatedBy: ",")
-            .enumerated()
-            .map { index, element in
-                WorkoutTypeModel(title: element, status: true, index: index)
-            } ?? []
-        miles = nsManagedObject.value(forKeyPath: "miles") as? String
+    required init(_ fireStoreObject: [String: Any], id: String) {
+        title = (fireStoreObject["title"] as! String)
+        workoutTypes = MileageModel.workoutTypesAsStringToWorkoutTypes(fireStoreObject["workoutTypes"] as? String ?? "")
+        let startDate = fireStoreObject["startDate"] as! Timestamp
+        self.startDate = Date(timeIntervalSince1970: TimeInterval(startDate.seconds))
+        let endDate = (fireStoreObject["endDate"] as? Timestamp) ?? nil
+        if endDate == nil {
+            self.endDate = nil
+        } else {
+            self.endDate = Date(timeIntervalSince1970: TimeInterval(endDate!.seconds))
+        }
+        userId = fireStoreObject["userId"] as? String
+        self.id = id
+    }
+
+    func toFirestore() -> [String: Any] {
+        return [
+            "title": self.title,
+            "workoutTypes": workoutTypesAsString(),
+            "startDate": startDate,
+            "endDate": endDate,
+            "userId": "matt",
+        ]
     }
 
     func asTableViewCell(_ cell: MileageTableViewCell) -> MileageTableViewCell {
@@ -49,8 +63,16 @@ class MileageModel {
         return cell
     }
 
-    func workoutTypesAsString() -> String {
+    private func workoutTypesAsString() -> String {
         return workoutTypes.map { $0.title }.joined(separator: ",")
+    }
+
+    static func workoutTypesAsStringToWorkoutTypes(_ workoutTypes: String) -> [WorkoutTypeModel] {
+        return workoutTypes.components(separatedBy: ",")
+            .enumerated()
+            .map { index, element in
+                WorkoutTypeModel(title: element, status: true, index: index)
+            }
     }
 
     func getMiles(completion: @escaping (String) -> Void) {

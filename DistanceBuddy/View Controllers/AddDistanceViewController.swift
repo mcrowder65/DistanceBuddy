@@ -6,16 +6,16 @@
 //  Copyright © 2019 Matt. All rights reserved.
 //
 
+import FirebaseCore
+import FirebaseFirestore
 import SwiftyPickerPopover
 import UIKit
-
 class AddDistanceViewController: UIViewController, UITextFieldDelegate {
+    let distanceFao: DistanceFAO = DistanceFAO()
     var table: WorkoutTypeTableViewController?
     @IBOutlet var startDate: UITextField!
     @IBOutlet var endDate: UITextField!
     @IBOutlet var descriptionField: UITextField!
-
-    weak var delegate: AddDistanceDelegate!
 
     @IBAction func save(_: Any) {
         let found = table?.cells.first(where: { $0.status == true })
@@ -29,13 +29,16 @@ class AddDistanceViewController: UIViewController, UITextFieldDelegate {
             let workoutTypes = table?.cells.filter { (WorkoutTypeModel) -> Bool in
                 WorkoutTypeModel.status == true
             } ?? []
-            delegate.distanceWasAdded(
-                description: descriptionValue,
+            let mileage = MileageModel(
+                title: descriptionValue,
+                workoutTypes: workoutTypes,
                 startDate: textToDate(startDate.text),
-                endDate: (endDate.text != "") ? textToDate(endDate.text) : nil,
-                workoutTypes: workoutTypes
+                endDate: (endDate.text != "") ? textToDate(endDate.text) : nil
             )
-            dismiss(animated: true, completion: nil)
+            distanceFao.add(mileage, completion: { _ in
+                self.dismiss(animated: true, completion: nil)
+            })
+
         } else {
             let alert = UIAlertController(title: "Description is required", message: "", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -84,6 +87,7 @@ class AddDistanceViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // [START setup]
         startDate.text = dateToText(Date())
         endDate.text = ""
         descriptionField.text = ""

@@ -7,9 +7,13 @@
 //
 
 import CoreData
+import FirebaseCore
+import FirebaseFirestore
 import Promises
 import UIKit
 class MileageTableViewController: UITableViewController {
+    let distanceFao: DistanceFAO = DistanceFAO()
+    var db: Firestore!
     var running: DefaultCellModel = DefaultCellModel(title: "Running Distance", year: 0, month: 0, week: 0) {
         didSet {
             defaultCells[0] = running
@@ -31,7 +35,7 @@ class MileageTableViewController: UITableViewController {
         }
     }
 
-    var cells: [NSManagedObject]! = [] {
+    var cells: [MileageModel]! = [] {
         didSet {
             tableView.reloadData()
         }
@@ -47,41 +51,22 @@ class MileageTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        distanceFao.subscribe { mileageModels in
+            self.cells = mileageModels as? [MileageModel]
+            self.getMilesForCustomCells()
+        }
         // This makes it so there are no extra empty cells displayed
         tableView.tableFooterView = UIView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        // 1
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-
-        // 2
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: "Mileage")
-
-        // 3
-        do {
-            cells = try managedContext.fetch(fetchRequest)
-            getMilesForCustomCells()
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
     }
 
     func getMilesForCustomCells() {
-        let mileageModels = cells.map { MileageModel($0) }
-        mileageModels.enumerated().forEach { index, mileage in
+        cells.enumerated().forEach { index, mileage in
             mileage.getMiles { result in
-                self.cells[index].setValue(result, forKey: "miles")
+                self.cells[index].miles = result
                 self.tableView.reloadData()
             }
         }
@@ -99,23 +84,9 @@ class MileageTableViewController: UITableViewController {
         if indexPath.row < defaultCells.count {
             return []
         }
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { _, indexPath in
-
-            guard let appDelegate =
-                UIApplication.shared.delegate as? AppDelegate else {
-                return
-            }
-
-            let managedContext = appDelegate.persistentContainer.viewContext
-
-            do {
-                let cell = self.cells[indexPath.row - self.defaultCells.count]
-                managedContext.delete(cell)
-                self.cells.remove(at: indexPath.row - self.defaultCells.count)
-                try managedContext.save()
-            } catch let error as NSError {
-                print("Could not save. \(error), \(error.userInfo)")
-            }
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { _, _ in
+            let cell = self.cells[indexPath.row - self.defaultCells.count]
+            self.distanceFao.delete(cell.id!, completion: {})
         }
 
 //        let edit = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
@@ -141,7 +112,7 @@ class MileageTableViewController: UITableViewController {
                 fatalError("The dequeued cell is not an instance of \(cellIdentifier).")
             }
             let index = indexPath.row - defaultCells.count
-            return MileageModel(cells[index]).asTableViewCell(cell)
+            return cells[index].asTableViewCell(cell)
         }
     }
 }

@@ -8,7 +8,12 @@ def shared_pods
     pod 'SwiftyPickerPopover'
     pod 'PromisesSwift'
     pod 'SwiftFormat/CLI'
+    pod 'Firebase/Analytics'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Firestore'
+    pod 'FirebaseFirestoreSwift'
 end
+
 target 'DistanceBuddy' do
     shared_pods
 end
