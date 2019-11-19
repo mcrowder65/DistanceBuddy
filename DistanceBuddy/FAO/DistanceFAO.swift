@@ -21,9 +21,10 @@ class DistanceFAO: FAO {
 
     func add(_ firebaseModel: FirebaseModel, completion: ((String) -> Void)?) {
         var ref: DocumentReference?
-        ref = db.collection("distances").addDocument(data: firebaseModel.toFirestore()) { err in
+        let data = firebaseModel.toFirestore()
+        ref = db.collection("distances").addDocument(data: data) { err in
             if let err = err {
-                print("Error adding document: \(err)")
+                sendSentryEvent(message: err.localizedDescription, extra: data)
             } else {
                 completion?(ref!.documentID)
             }
@@ -31,10 +32,16 @@ class DistanceFAO: FAO {
     }
 
     func subscribe(_ complete: @escaping ([FirebaseModel]) -> Void) {
-        db.collection("distances").whereField("userId", isEqualTo: "matt")
+        let userId = "matt"
+        db.collection("distances").whereField("userId", isEqualTo: userId)
             .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
-                    print("Error fetching documents: \(error!)")
+                    if let err = error {
+                        sendSentryEvent(message: err.localizedDescription, extra: ["userId": userId])
+                    } else {
+                        sendSentryEvent(message: "Somehow subscribing to distances, userId: \(userId) failed and the error was not defined")
+                    }
+
                     return
                 }
                 let mileages = documents.map { MileageModel($0.data(), id: $0.documentID) }
@@ -46,7 +53,7 @@ class DistanceFAO: FAO {
     func delete(_ id: String, completion: (() -> Void)? = nil) {
         db.collection("distances").document(id).delete { err in
             if let err = err {
-                print("Error removing document: \(err)")
+                sendSentryEvent(message: err.localizedDescription, extra: ["id": id])
             } else {
                 completion?()
             }
@@ -54,9 +61,10 @@ class DistanceFAO: FAO {
     }
 
     func update(_ firebaseModel: FirebaseModel, id: String, completion: (() -> Void)? = nil) {
-        db.collection("distances").document(id).setData(firebaseModel.toFirestore()) { err in
+        let data = firebaseModel.toFirestore()
+        db.collection("distances").document(id).setData(data) { err in
             if let err = err {
-                print("Error removing document: \(err)")
+                sendSentryEvent(message: err.localizedDescription, extra: data)
             } else {
                 completion?()
             }

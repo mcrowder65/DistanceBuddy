@@ -8,6 +8,7 @@
 
 import CoreData
 import Firebase
+import Sentry
 import UIKit
 
 @UIApplicationMain
@@ -16,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        do {
+            Client.shared = try Client(dsn: "https://be370b7ddd494723a158538d6cdd7c06@sentry.io/1826292")
+            try Client.shared?.startCrashHandler()
+        } catch {
+            print("\(error)")
+        }
+
         FirebaseApp.configure()
         return true
     }

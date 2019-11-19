@@ -9,7 +9,7 @@
 import Foundation
 import HealthKit
 import Promises
-
+import Sentry
 private let dateFormat: String = "MM/dd/yyyy"
 private let healthStore = HKHealthStore()
 func getWorkoutType(for workoutType: String) -> HKWorkoutActivityType {
@@ -150,4 +150,11 @@ func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Swift.Void) {
                                          read: healthKitTypesToRead) { success, error in
         completion(success, error)
     }
+}
+
+func sendSentryEvent(message: String, extra: [String: Any]? = [:]) {
+    let event = Event(level: .debug)
+    event.message = message
+    event.extra = extra
+    Client.shared?.send(event: event)
 }

@@ -5,6 +5,9 @@ xcode_scheme: DistanceBuddy
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8
 install: pod install
 
+branches:
+  only:
+  - master
 
 script:
   - swiftlint lint

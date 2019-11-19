@@ -278,6 +278,9 @@ PODS:
   - PromisesObjC (1.2.8)
   - PromisesSwift (1.2.8):
     - PromisesObjC (= 1.2.8)
+  - Sentry (4.4.1):
+    - Sentry/Core (= 4.4.1)
+  - Sentry/Core (4.4.1)
   - SwiftDate (6.1.0)
   - SwiftFormat/CLI (0.40.14)
   - SwiftLint (0.36.0)
@@ -289,6 +292,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - FirebaseFirestoreSwift
   - PromisesSwift
+  - Sentry (from `https://github.com/getsentry/sentry-cocoa.git`, tag `4.4.1`)
   - SwiftDate (~> 6.0)
   - SwiftFormat/CLI
   - SwiftLint
@@ -324,6 +328,16 @@ SPEC REPOS:
     - SwiftLint
     - SwiftyPickerPopover
 
+EXTERNAL SOURCES:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 4.4.1
+
+CHECKOUT OPTIONS:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 4.4.1
+
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -348,11 +362,12 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
+  Sentry: 5d312a04e369154aeac616214f4dfc3cbcc8b296
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftFormat: 21c9c3c748d5fcece493d8610eee23df15393458
   SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
   SwiftyPickerPopover: a402960a6687c911ffcb4e9fb282a1bc61186ab4
 
-PODFILE CHECKSUM: 5e1df1b72ab5081f9a3c436852ae8ba8bade5a9f
+PODFILE CHECKSUM: 8bbf694560377a2f920ac4c3a6f4e19347556071
 
 COCOAPODS: 1.8.4
