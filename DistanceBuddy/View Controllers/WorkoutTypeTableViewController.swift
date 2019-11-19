@@ -45,6 +45,7 @@ class WorkoutTypeTableViewController: UITableViewController, WorkoutTypeDelegate
         cell.workoutTitle?.text = cells[indexPath.row].title
         cell.delegate = self
         cell.cell = cells[indexPath.row]
+        cell.setStatus(status: cell.cell.status)
         return cell
     }
 }

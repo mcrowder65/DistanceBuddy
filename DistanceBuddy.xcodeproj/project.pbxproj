@@ -22,7 +22,7 @@
 		B95E60D5236DF82900DCD1C3 /* MileageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60D4236DF82900DCD1C3 /* MileageModel.swift */; };
 		B95E60DF236E23EB00DCD1C3 /* DefaultCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E60DE236E23EB00DCD1C3 /* DefaultCellModel.swift */; };
 		B95E60E1236E2B9D00DCD1C3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B95E60E0236E2B9D00DCD1C3 /* Podfile */; };
-		B961A92C236F2ACB0074FFE1 /* AddDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A92B236F2ACB0074FFE1 /* AddDistanceViewController.swift */; };
+		B961A92C236F2ACB0074FFE1 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A92B236F2ACB0074FFE1 /* DistanceViewController.swift */; };
 		B961A9302370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */; };
 		B961A9322370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */; };
 		B961A9342370F29C0074FFE1 /* WorkoutTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */; };
@@ -69,7 +69,7 @@
 		B95E60D4236DF82900DCD1C3 /* MileageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageModel.swift; sourceTree = "<group>"; };
 		B95E60DE236E23EB00DCD1C3 /* DefaultCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCellModel.swift; sourceTree = "<group>"; };
 		B95E60E0236E2B9D00DCD1C3 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B961A92B236F2ACB0074FFE1 /* AddDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDistanceViewController.swift; sourceTree = "<group>"; };
+		B961A92B236F2ACB0074FFE1 /* DistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
 		B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeTableViewController.swift; sourceTree = "<group>"; };
 		B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeTableViewCell.swift; sourceTree = "<group>"; };
 		B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeModel.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			children = (
 				B92E4BC32368E659002E5966 /* ViewController.swift */,
 				B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */,
-				B961A92B236F2ACB0074FFE1 /* AddDistanceViewController.swift */,
+				B961A92B236F2ACB0074FFE1 /* DistanceViewController.swift */,
 				B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */,
 			);
 			path = "View Controllers";
@@ -466,7 +466,7 @@
 				B901E0752371909400EC6E4B /* Utilities.swift in Sources */,
 				B9A4AF842383737C00506BF1 /* DistanceFAO.swift in Sources */,
 				B95E60DF236E23EB00DCD1C3 /* DefaultCellModel.swift in Sources */,
-				B961A92C236F2ACB0074FFE1 /* AddDistanceViewController.swift in Sources */,
+				B961A92C236F2ACB0074FFE1 /* DistanceViewController.swift in Sources */,
 				B92E4BC42368E659002E5966 /* ViewController.swift in Sources */,
 				B961A9302370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift in Sources */,
 				B961A9342370F29C0074FFE1 /* WorkoutTypeModel.swift in Sources */,

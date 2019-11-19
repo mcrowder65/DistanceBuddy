@@ -29,6 +29,24 @@ func getWorkoutType(for workoutType: String) -> HKWorkoutActivityType {
     return .running
 }
 
+func getWorkoutType(for workoutType: String, status: Bool) -> WorkoutTypeModel {
+    var index = 0
+    if workoutType == "Running" {
+        index = 0
+    } else if workoutType == "Walking" {
+        index = 1
+    } else if workoutType == "Cycling" {
+        index = 2
+    } else if workoutType == "Hiking" {
+        index = 3
+    } else if workoutType == "Rowing" {
+        index = 4
+    } else if workoutType == "Swimming" {
+        index = 5
+    }
+    return WorkoutTypeModel(title: workoutType, status: status, index: index)
+}
+
 func textToDate(_ text: String?) -> Date {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = dateFormat

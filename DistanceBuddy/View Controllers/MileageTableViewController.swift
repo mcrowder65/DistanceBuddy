@@ -89,14 +89,19 @@ class MileageTableViewController: UITableViewController {
             self.distanceFao.delete(cell.id!, completion: {})
         }
 
-//        let edit = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
-//            // share item at indexPath
-        ////            print("I want to share: \(self.tableArray[indexPath.row])")
-//        }
-//
-//        edit.backgroundColor = .clear
+        let edit = UITableViewRowAction(style: .default, title: "Edit") { _, indexPath in
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DistanceVC") as? UINavigationController
+            let cell = self.cells[indexPath.row - self.defaultCells.count]
+            (vc?.viewControllers[0] as? DistanceViewController)?.title = "Edit Distance"
+            self.present(vc!, animated: false, completion: {
+                (vc?.viewControllers[0] as? DistanceViewController)?.updateValues(from: cell)
+            })
+        }
 
-        return [delete]
+        edit.backgroundColor = .clear
+
+        return [delete, edit]
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> (UITableViewCell) {

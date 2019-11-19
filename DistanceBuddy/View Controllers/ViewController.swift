@@ -14,7 +14,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var table: MileageTableViewController?
-    var addDistance: AddDistanceViewController?
+    var addDistance: DistanceViewController?
 
     var running: DefaultCellModel = DefaultCellModel(title: "Running Distance", year: 0, month: 0, week: 0) {
         didSet {

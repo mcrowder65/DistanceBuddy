@@ -70,8 +70,8 @@ class MileageModel: FirebaseModel {
     static func workoutTypesAsStringToWorkoutTypes(_ workoutTypes: String) -> [WorkoutTypeModel] {
         return workoutTypes.components(separatedBy: ",")
             .enumerated()
-            .map { index, element in
-                WorkoutTypeModel(title: element, status: true, index: index)
+            .map { _, element in
+                getWorkoutType(for: element, status: true)
             }
     }
 

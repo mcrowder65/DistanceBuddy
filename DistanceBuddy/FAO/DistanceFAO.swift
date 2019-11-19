@@ -52,4 +52,14 @@ class DistanceFAO: FAO {
             }
         }
     }
+
+    func update(_ firebaseModel: FirebaseModel, id: String, completion: (() -> Void)? = nil) {
+        db.collection("distances").document(id).setData(firebaseModel.toFirestore()) { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                completion?()
+            }
+        }
+    }
 }

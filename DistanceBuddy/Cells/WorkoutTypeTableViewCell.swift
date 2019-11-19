@@ -19,6 +19,10 @@ class WorkoutTypeTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    func setStatus(status: Bool) {
+        workoutTypeStatus.setOn(status, animated: false)
+    }
+
     @IBAction func workoutTypeStatusChanged(_ sender: UISwitch) {
         workoutTypeStatus.setOn(sender.isOn, animated: true)
         delegate.statusChangedForCell(

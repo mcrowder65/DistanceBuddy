@@ -10,8 +10,10 @@ import FirebaseCore
 import FirebaseFirestore
 import SwiftyPickerPopover
 import UIKit
-class AddDistanceViewController: UIViewController, UITextFieldDelegate {
+class DistanceViewController: UIViewController, UITextFieldDelegate {
     let distanceFao: DistanceFAO = DistanceFAO()
+    var userId: String?
+    var id: String?
     var table: WorkoutTypeTableViewController?
     @IBOutlet var startDate: UITextField!
     @IBOutlet var endDate: UITextField!
@@ -35,9 +37,19 @@ class AddDistanceViewController: UIViewController, UITextFieldDelegate {
                 startDate: textToDate(startDate.text),
                 endDate: (endDate.text != "") ? textToDate(endDate.text) : nil
             )
-            distanceFao.add(mileage, completion: { _ in
-                self.dismiss(animated: true, completion: nil)
-            })
+            if let id = id {
+                distanceFao.update(
+                    mileage,
+                    id: id,
+                    completion: { () in
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                )
+            } else {
+                distanceFao.add(mileage, completion: { _ in
+                    self.dismiss(animated: true, completion: nil)
+                })
+            }
 
         } else {
             let alert = UIAlertController(title: "Description is required", message: "", preferredStyle: .alert)
@@ -77,6 +89,17 @@ class AddDistanceViewController: UIViewController, UITextFieldDelegate {
             .setMinimumDate(textToDate(startDate?.text))
             .setCancelButton(action: { _, _ in print("cancel") })
             .appear(originView: endDate, baseViewController: self)
+    }
+
+    func updateValues(from cell: MileageModel) {
+        startDate?.text = dateToText(cell.startDate)
+        descriptionField?.text = cell.title
+        endDate?.text = cell.endDate == nil ? "" : dateToText(cell.endDate)
+        cell.workoutTypes.forEach { workoutType in
+            self.table?.statusChangedForCell(cell: workoutType)
+        }
+        id = cell.id
+        userId = cell.userId
     }
 
     // When pressing the return button, it dismisses the keyboard
