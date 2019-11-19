@@ -95,3 +95,16 @@ class MileageModel: FirebaseModel {
         }
     }
 }
+
+extension MileageModel: Equatable {
+    static func == (lhs: MileageModel, rhs: MileageModel) -> Bool {
+        return
+            lhs.title == rhs.title &&
+            lhs.workoutTypesAsString() == rhs.workoutTypesAsString() &&
+            lhs.startDate == rhs.startDate &&
+            lhs.endDate == rhs.endDate &&
+            lhs.miles == rhs.miles &&
+            lhs.userId == rhs.userId &&
+            lhs.id == rhs.id
+    }
+}

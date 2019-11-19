@@ -52,8 +52,19 @@ class MileageTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         distanceFao.subscribe { mileageModels in
-            self.cells = mileageModels as? [MileageModel]
-            self.getMilesForCustomCells()
+            (mileageModels as? [MileageModel])?
+                .enumerated()
+                .forEach { index, mileage in
+                    mileage.getMiles { result in
+                        mileage.miles = result
+                        if self.cells.count != mileageModels.count {
+                            self.cells.append(mileage)
+                            self.tableView.reloadData()
+                        } else if !(self.cells[index] == mileage) {
+                            self.cells[index] = mileage
+                        }
+                    }
+                }
         }
         // This makes it so there are no extra empty cells displayed
         tableView.tableFooterView = UIView()
