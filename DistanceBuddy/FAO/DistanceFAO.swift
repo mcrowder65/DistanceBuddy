@@ -31,22 +31,15 @@ class DistanceFAO: FAO {
         }
     }
 
-    func subscribe(_ complete: @escaping ([FirebaseModel]) -> Void) {
+    func subscribe(_ complete: @escaping (FirebaseModel, DocumentChangeType) -> Void) {
         let userId = "matt"
         db.collection("distances").whereField("userId", isEqualTo: userId)
-            .addSnapshotListener { querySnapshot, error in
-                guard let documents = querySnapshot?.documents else {
-                    if let err = error {
-                        sendSentryEvent(message: err.localizedDescription, extra: ["userId": userId])
-                    } else {
-                        sendSentryEvent(message: "Somehow subscribing to distances, userId: \(userId) failed and the error was not defined")
-                    }
-
-                    return
+            .addSnapshotListener { querySnapshot, _ in
+                querySnapshot?.documentChanges.forEach { diff in
+                    let data = diff.document.data()
+                    let mileage = MileageModel(data, id: diff.document.documentID)
+                    complete(mileage, diff.type)
                 }
-                let mileages = documents.map { MileageModel($0.data(), id: $0.documentID) }
-
-                complete(mileages)
             }
     }
 

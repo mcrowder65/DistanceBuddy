@@ -6,10 +6,10 @@
          contextName = "static MileageModel.workoutTypesToNSData(for:):MileageModel.swift">
       </ContextState>
       <ContextState
-         contextName = "AddDistanceViewController.save(_:):AddDistanceViewController.swift">
+         contextName = "textToDate(_:):Utilities.swift">
          <PersistentStrings>
             <PersistentString
-               value = "startDate.text">
+               value = "selectedDate">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -17,7 +17,15 @@
          contextName = "closure #1 in MileageTableViewController.viewDidLoad():MileageTableViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in ViewController.getWorkouts(type:completion:):ViewController.swift">
+         contextName = "MileageTableViewController.tableView(_:editActionsForRowAt:):MileageTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in DistanceFAO.subscribe(_:):DistanceFAO.swift">
       </ContextState>
       <ContextState
          contextName = "AddDistanceViewController.viewDidLoad():AddDistanceViewController.swift">
@@ -50,10 +58,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MileageModel.init(_:id:):MileageModel.swift">
+         contextName = "closure #1 in closure #1 in DistanceFAO.subscribe(_:):DistanceFAO.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.startDate">
+               value = "diff.type">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -62,6 +70,14 @@
          <PersistentStrings>
             <PersistentString
                value = "sender.isOn">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MileageModel.init(_:id:):MileageModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.startDate">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -85,20 +101,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "textToDate(_:):Utilities.swift">
+         contextName = "AddDistanceViewController.save(_:):AddDistanceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "selectedDate">
+               value = "startDate.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MileageTableViewController.tableView(_:editActionsForRowAt:):MileageTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "indexPath.row">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "closure #1 in ViewController.getWorkouts(type:completion:):ViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
