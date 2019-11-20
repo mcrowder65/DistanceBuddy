@@ -76,23 +76,25 @@ class MileageModel: FirebaseModel {
     }
 
     func getMiles(completion: @escaping (String) -> Void) {
-        all(
-            workoutTypes.map({ (WorkoutTypeModel) -> Promise<Double> in
-                Promise<Double> { fulfill, _ in
-                    getCustomWorkout(
-                        type: getWorkoutType(for: WorkoutTypeModel.title),
-                        startDate: self.startDate,
-                        endDate: self.endDate,
-                        completion: { Double in fulfill(Double) }
-                    )
+        authorizeHealthKit(completion: { _, _ in
+            all(
+                self.workoutTypes.map({ (WorkoutTypeModel) -> Promise<Double> in
+                    Promise<Double> { fulfill, _ in
+                        getCustomWorkout(
+                            type: getWorkoutType(for: WorkoutTypeModel.title),
+                            startDate: self.startDate,
+                            endDate: self.endDate,
+                            completion: { Double in fulfill(Double) }
+                        )
+                    }
                 }
+            )).then { results in
+                let miles = results.reduce(0) { (accum, r) -> Double in
+                    accum + r
+                }
+                completion(String(Int(miles)))
             }
-        )).then { results in
-            let miles = results.reduce(0) { (accum, r) -> Double in
-                accum + r
-            }
-            completion(String(Int(miles)))
-        }
+        })
     }
 }
 
