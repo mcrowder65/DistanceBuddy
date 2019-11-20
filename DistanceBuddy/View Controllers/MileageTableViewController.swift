@@ -105,7 +105,16 @@ class MileageTableViewController: UITableViewController {
         }
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { _, _ in
             let cell = self.cells[indexPath.row - self.defaultCells.count]
-            self.distanceFao.delete(cell.id!, completion: {})
+            let alert = UIAlertController(title: "Are you you want to delete \(cell.title)", message: "", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                self.distanceFao.delete(cell.id!, completion: nil)
+            })
+            let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+
+            alert.addAction(cancel)
+            alert.addAction(ok)
+
+            self.present(alert, animated: true, completion: nil)
         }
 
         let edit = UITableViewRowAction(style: .default, title: "Edit") { _, indexPath in
