@@ -53,24 +53,43 @@ class MileageTableViewController: UITableViewController {
         super.viewDidLoad()
         distanceFao.subscribe { mileageModel, type in
             let mileage = mileageModel as! MileageModel
-            mileage.getMiles { result in
-                mileage.miles = result
-                if type == .added {
+            if type == .added {
+                mileage.getMiles { result in
+                    mileage.miles = result
                     self.cells.append(mileage)
+                    self.tableView.reloadData()
                 }
-                if type == .modified {
+            }
+            if type == .modified {
+                let originalMileage = self.cells.first { $0.id == mileage.id }
+                if originalMileage?.containsMileageChange(otherModel: mileage) ?? false {
+                    mileage.getMiles { result in
+                        mileage.miles = result
+                        let cells: [MileageModel] = self.cells.enumerated().map { _, model in
+                            if model.id == mileage.id {
+                                return mileage
+                            }
+                            return model
+                        }
+                        self.cells = cells
+                        self.tableView.reloadData()
+                    }
+                } else {
                     let cells: [MileageModel] = self.cells.enumerated().map { _, model in
                         if model.id == mileage.id {
+                            mileage.miles = originalMileage?.miles
                             return mileage
                         }
                         return model
                     }
                     self.cells = cells
+                    self.tableView.reloadData()
                 }
-                if type == .removed {
-                    let cells: [MileageModel] = self.cells.filter { $0.id != mileage.id }
-                    self.cells = cells
-                }
+            }
+
+            if type == .removed {
+                let cells: [MileageModel] = self.cells.filter { $0.id != mileage.id }
+                self.cells = cells
                 self.tableView.reloadData()
             }
         }

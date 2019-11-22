@@ -96,6 +96,10 @@ class MileageModel: FirebaseModel {
             }
         })
     }
+
+    func containsMileageChange(otherModel: MileageModel) -> Bool {
+        return endDate != otherModel.endDate || startDate != otherModel.startDate || workoutTypesAsString() != otherModel.workoutTypesAsString()
+    }
 }
 
 extension MileageModel: Equatable {
