@@ -14,7 +14,17 @@ class MileageModel: FirebaseModel {
     var title: String
     var workoutTypes: [WorkoutTypeModel]
     var startDate: Date
-    var endDate: Date?
+    private var privateEndDate: Date?
+    var endDate: Date? {
+        get {
+            return privateEndDate
+        }
+        set(newEndDate) {
+            privateEndDate = newEndDate
+            privateEndDate?.addTimeInterval(86399)
+        }
+    }
+
     var miles: String?
     var userId: String?
     var id: String?
