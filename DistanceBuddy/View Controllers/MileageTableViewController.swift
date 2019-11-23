@@ -49,8 +49,18 @@ class MileageTableViewController: UITableViewController {
         ]
     }()
 
+    @objc private func refresh(_: Any) {
+        getMilesForDefaultCells {
+            self.getMilesForCustomCells {
+                self.refreshControl?.endRefreshing()
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: UIControl.Event.valueChanged)
+        getMilesForDefaultCells(nil)
         distanceFao.subscribe { mileageModel, type in
             let mileage = mileageModel as! MileageModel
             if type == .added {
@@ -101,12 +111,30 @@ class MileageTableViewController: UITableViewController {
         super.viewWillAppear(animated)
     }
 
-    func getMilesForCustomCells() {
-        cells.enumerated().forEach { index, mileage in
-            mileage.getMiles { result in
-                self.cells[index].miles = result
-                self.tableView.reloadData()
+    func getMilesForDefaultCells(_ complete: (() -> Void)?) {
+        authorizeHealthKit { _, _ in
+            getWorkouts(completion: { (running: DefaultCellModel, walking: DefaultCellModel, cycling: DefaultCellModel) in
+                DispatchQueue.main.async {
+                    self.running = running
+                    self.walking = walking
+                    self.cycling = cycling
+                    complete?()
+                }
+            })
+        }
+    }
+
+    func getMilesForCustomCells(_ complete: (() -> Void)?) {
+        all(cells.enumerated().map { index, mileage in
+            Promise<String> { fulfill, _ in
+                mileage.getMiles { result in
+                    self.cells[index].miles = result
+                    self.tableView.reloadData()
+                    fulfill(result)
+                }
             }
+        }).then { _ in
+            complete?()
         }
     }
 
