@@ -158,6 +158,14 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - AppCenter (2.5.1):
+    - AppCenter/Analytics (= 2.5.1)
+    - AppCenter/Crashes (= 2.5.1)
+  - AppCenter/Analytics (2.5.1):
+    - AppCenter/Core
+  - AppCenter/Core (2.5.1)
+  - AppCenter/Crashes (2.5.1):
+    - AppCenter/Core
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
     - BoringSSL-GRPC/Interface (= 0.0.3)
@@ -287,6 +295,7 @@ PODS:
   - SwiftyPickerPopover (6.6.6)
 
 DEPENDENCIES:
+  - AppCenter
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
@@ -301,6 +310,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - abseil
+    - AppCenter
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
@@ -340,6 +350,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
+  AppCenter: fddcbac6e4baae3d93a196ceb0bfe0e4ce407dec
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
@@ -368,6 +379,6 @@ SPEC CHECKSUMS:
   SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
   SwiftyPickerPopover: a402960a6687c911ffcb4e9fb282a1bc61186ab4
 
-PODFILE CHECKSUM: 8bbf694560377a2f920ac4c3a6f4e19347556071
+PODFILE CHECKSUM: 92ec59a3999b5c81d845d31e81cd3147b1e1a141
 
 COCOAPODS: 1.8.4

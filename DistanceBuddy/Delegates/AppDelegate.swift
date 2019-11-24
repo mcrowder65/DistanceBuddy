@@ -6,14 +6,22 @@
 //  Copyright © 2019 Matt. All rights reserved.
 //
 
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 import CoreData
 import Firebase
 import Sentry
 import UIKit
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    func applicationDidFinishLaunching(_: UIApplication) {
+        MSAppCenter.start("d4a29191-2643-4704-8473-b3a57e8d5850", withServices: [
+            MSAnalytics.self,
+            MSCrashes.self,
+        ])
+    }
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
