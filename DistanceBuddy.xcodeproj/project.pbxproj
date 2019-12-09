@@ -10,10 +10,13 @@
 		0F4418B48BD888F2C7FF1470 /* Pods_DistanceBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989B391D780FB644EAD0C864 /* Pods_DistanceBuddy.framework */; };
 		2B551CF576A8D619651127EB /* Pods_DistanceBuddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91247BB641A08E692386EEE6 /* Pods_DistanceBuddyTests.framework */; };
 		B901E0752371909400EC6E4B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B901E0742371909400EC6E4B /* Utilities.swift */; };
+		B924A1462395BD7E00361DE2 /* LoginAndSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B924A1452395BD7E00361DE2 /* LoginAndSignup.storyboard */; };
+		B924A1482395BFE000361DE2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B924A1472395BFE000361DE2 /* MainViewController.swift */; };
+		B924A14A2395C0D600361DE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B924A1492395C0D600361DE2 /* Main.storyboard */; };
 		B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BBF2368E659002E5966 /* AppDelegate.swift */; };
 		B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BC12368E659002E5966 /* SceneDelegate.swift */; };
 		B92E4BC42368E659002E5966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BC32368E659002E5966 /* ViewController.swift */; };
-		B92E4BC72368E659002E5966 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92E4BC52368E659002E5966 /* Main.storyboard */; };
+		B92E4BC72368E659002E5966 /* Distance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92E4BC52368E659002E5966 /* Distance.storyboard */; };
 		B92E4BC92368E65A002E5966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92E4BC82368E65A002E5966 /* Assets.xcassets */; };
 		B92E4BCC2368E65A002E5966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */; };
 		B92E4BDD236903A9002E5966 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92E4BDC236903A9002E5966 /* HealthKit.framework */; };
@@ -27,12 +30,15 @@
 		B961A9322370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */; };
 		B961A9342370F29C0074FFE1 /* WorkoutTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */; };
 		B961A9362370F6070074FFE1 /* WorkoutTypeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9352370F6070074FFE1 /* WorkoutTypeDelegate.swift */; };
+		B96B926E239DA081003F2480 /* LoginAndSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B926D239DA081003F2480 /* LoginAndSignupViewController.swift */; };
 		B97314F4238203C1002901DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B97314F3238203C1002901DB /* GoogleService-Info.plist */; };
 		B979CB0C237728AD0084BB9B /* DistanceBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B979CB0B237728AD0084BB9B /* DistanceBuddyTests.swift */; };
 		B979CB14237728E60084BB9B /* UtilitiesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B979CB13237728E60084BB9B /* UtilitiesTest.swift */; };
 		B9A4AF822383732600506BF1 /* FAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A4AF812383732600506BF1 /* FAO.swift */; };
 		B9A4AF842383737C00506BF1 /* DistanceFAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A4AF832383737C00506BF1 /* DistanceFAO.swift */; };
 		B9A4AF862383762B00506BF1 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A4AF852383762B00506BF1 /* FirebaseModel.swift */; };
+		B9EEC7E3239DAA550001CAF2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EEC7E2239DAA550001CAF2 /* LoginViewController.swift */; };
+		B9EEC7E5239DAA5E0001CAF2 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EEC7E4239DAA5E0001CAF2 /* SignupViewController.swift */; };
 		B9F3BFC42372E66700AAECC9 /* MileageDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3BFC32372E66700AAECC9 /* MileageDefaultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,11 +60,14 @@
 		91247BB641A08E692386EEE6 /* Pods_DistanceBuddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistanceBuddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		989B391D780FB644EAD0C864 /* Pods_DistanceBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistanceBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B901E0742371909400EC6E4B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		B924A1452395BD7E00361DE2 /* LoginAndSignup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndSignup.storyboard; sourceTree = "<group>"; };
+		B924A1472395BFE000361DE2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B924A1492395C0D600361DE2 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B92E4BBC2368E659002E5966 /* DistanceBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92E4BBF2368E659002E5966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B92E4BC12368E659002E5966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B92E4BC32368E659002E5966 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B92E4BC62368E659002E5966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B92E4BC62368E659002E5966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Distance.storyboard; sourceTree = "<group>"; };
 		B92E4BC82368E65A002E5966 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B92E4BCB2368E65A002E5966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B92E4BCD2368E65A002E5966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +83,7 @@
 		B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeTableViewCell.swift; sourceTree = "<group>"; };
 		B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeModel.swift; sourceTree = "<group>"; };
 		B961A9352370F6070074FFE1 /* WorkoutTypeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeDelegate.swift; sourceTree = "<group>"; };
+		B96B926D239DA081003F2480 /* LoginAndSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupViewController.swift; sourceTree = "<group>"; };
 		B97314F3238203C1002901DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B979CB09237728AD0084BB9B /* DistanceBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistanceBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B979CB0B237728AD0084BB9B /* DistanceBuddyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceBuddyTests.swift; sourceTree = "<group>"; };
@@ -82,6 +92,8 @@
 		B9A4AF812383732600506BF1 /* FAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAO.swift; sourceTree = "<group>"; };
 		B9A4AF832383737C00506BF1 /* DistanceFAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFAO.swift; sourceTree = "<group>"; };
 		B9A4AF852383762B00506BF1 /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		B9EEC7E2239DAA550001CAF2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B9EEC7E4239DAA5E0001CAF2 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		B9F3BFC32372E66700AAECC9 /* MileageDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageDefaultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,10 +180,12 @@
 		B97314EF23820117002901DB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B9EEC7E1239DAA450001CAF2 /* LoginSignup */,
 				B92E4BC32368E659002E5966 /* ViewController.swift */,
 				B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */,
 				B961A92B236F2ACB0074FFE1 /* DistanceViewController.swift */,
 				B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */,
+				B924A1472395BFE000361DE2 /* MainViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -199,8 +213,10 @@
 		B97314F2238201E4002901DB /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				B92E4BC52368E659002E5966 /* Main.storyboard */,
+				B92E4BC52368E659002E5966 /* Distance.storyboard */,
 				B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */,
+				B924A1452395BD7E00361DE2 /* LoginAndSignup.storyboard */,
+				B924A1492395C0D600361DE2 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -223,6 +239,16 @@
 				B9A4AF832383737C00506BF1 /* DistanceFAO.swift */,
 			);
 			path = FAO;
+			sourceTree = "<group>";
+		};
+		B9EEC7E1239DAA450001CAF2 /* LoginSignup */ = {
+			isa = PBXGroup;
+			children = (
+				B96B926D239DA081003F2480 /* LoginAndSignupViewController.swift */,
+				B9EEC7E2239DAA550001CAF2 /* LoginViewController.swift */,
+				B9EEC7E4239DAA5E0001CAF2 /* SignupViewController.swift */,
+			);
+			path = LoginSignup;
 			sourceTree = "<group>";
 		};
 		C55887782E254C100C97B4F4 /* Pods */ = {
@@ -325,9 +351,11 @@
 			files = (
 				B92E4BCC2368E65A002E5966 /* LaunchScreen.storyboard in Resources */,
 				B92E4BC92368E65A002E5966 /* Assets.xcassets in Resources */,
+				B924A1462395BD7E00361DE2 /* LoginAndSignup.storyboard in Resources */,
 				B97314F4238203C1002901DB /* GoogleService-Info.plist in Resources */,
 				B95E60E1236E2B9D00DCD1C3 /* Podfile in Resources */,
-				B92E4BC72368E659002E5966 /* Main.storyboard in Resources */,
+				B92E4BC72368E659002E5966 /* Distance.storyboard in Resources */,
+				B924A14A2395C0D600361DE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,15 +496,19 @@
 				B95E60DF236E23EB00DCD1C3 /* DefaultCellModel.swift in Sources */,
 				B961A92C236F2ACB0074FFE1 /* DistanceViewController.swift in Sources */,
 				B92E4BC42368E659002E5966 /* ViewController.swift in Sources */,
+				B9EEC7E3239DAA550001CAF2 /* LoginViewController.swift in Sources */,
 				B961A9302370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift in Sources */,
+				B96B926E239DA081003F2480 /* LoginAndSignupViewController.swift in Sources */,
 				B961A9342370F29C0074FFE1 /* WorkoutTypeModel.swift in Sources */,
 				B95E60D3236DF47500DCD1C3 /* MileageTableViewCell.swift in Sources */,
 				B9A4AF822383732600506BF1 /* FAO.swift in Sources */,
 				B961A9362370F6070074FFE1 /* WorkoutTypeDelegate.swift in Sources */,
+				B9EEC7E5239DAA5E0001CAF2 /* SignupViewController.swift in Sources */,
 				B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */,
 				B95E60D5236DF82900DCD1C3 /* MileageModel.swift in Sources */,
 				B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */,
 				B9F3BFC42372E66700AAECC9 /* MileageDefaultTableViewCell.swift in Sources */,
+				B924A1482395BFE000361DE2 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,12 +532,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B92E4BC52368E659002E5966 /* Main.storyboard */ = {
+		B92E4BC52368E659002E5966 /* Distance.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B92E4BC62368E659002E5966 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Distance.storyboard;
 			sourceTree = "<group>";
 		};
 		B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */ = {

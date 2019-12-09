@@ -6,10 +6,10 @@
 //  Copyright © 2019 Matt. All rights reserved.
 //
 
+import Firebase
 import FirebaseCore
 import FirebaseFirestore
 import Foundation
-
 class DistanceFAO: FAO {
     lazy var db: Firestore! = {
         let settings = FirestoreSettings()
@@ -32,8 +32,9 @@ class DistanceFAO: FAO {
     }
 
     func subscribe(_ complete: @escaping (FirebaseModel, DocumentChangeType) -> Void) {
-        let userId = "matt"
-        db.collection("distances").whereField("userId", isEqualTo: userId)
+        let user = Auth.auth().currentUser
+
+        db.collection("distances").whereField("userId", isEqualTo: user?.uid ?? "")
             .addSnapshotListener { querySnapshot, _ in
                 querySnapshot?.documentChanges.forEach { diff in
                     let data = diff.document.data()

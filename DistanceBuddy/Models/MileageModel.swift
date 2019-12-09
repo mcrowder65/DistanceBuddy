@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import Firebase
 import FirebaseFirestore
 import Foundation
 import Promises
@@ -20,8 +21,7 @@ class MileageModel: FirebaseModel {
             return privateEndDate
         }
         set(newEndDate) {
-            privateEndDate = newEndDate
-            privateEndDate?.addTimeInterval(86399)
+            privateEndDate = newEndDate?.dateAtEndOf(.day)
         }
     }
 
@@ -51,13 +51,18 @@ class MileageModel: FirebaseModel {
     }
 
     func toFirestore() -> [String: Any] {
-        return [
-            "title": self.title,
-            "workoutTypes": workoutTypesAsString(),
-            "startDate": startDate,
-            "endDate": endDate,
-            "userId": "matt",
-        ]
+        let user = Auth.auth().currentUser
+        if let uid = user?.uid {
+            return [
+                "title": self.title,
+                "workoutTypes": workoutTypesAsString(),
+                "startDate": startDate,
+                "endDate": endDate,
+                "userId": uid,
+            ]
+        } else {
+            return [:]
+        }
     }
 
     func asTableViewCell(_ cell: MileageTableViewCell) -> MileageTableViewCell {

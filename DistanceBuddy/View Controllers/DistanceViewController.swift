@@ -15,6 +15,7 @@ class DistanceViewController: UIViewController, UITextFieldDelegate {
     var userId: String?
     var id: String?
     var table: WorkoutTypeTableViewController?
+
     @IBOutlet var startDate: UITextField!
     @IBOutlet var endDate: UITextField!
     @IBOutlet var descriptionField: UITextField!

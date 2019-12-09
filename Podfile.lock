@@ -295,17 +295,17 @@ PODS:
   - SwiftyPickerPopover (6.6.6)
 
 DEPENDENCIES:
-  - AppCenter
-  - Firebase/Analytics
-  - Firebase/Auth
-  - Firebase/Firestore
-  - FirebaseFirestoreSwift
-  - PromisesSwift
+  - AppCenter (~> 2.5.1)
+  - Firebase/Analytics (~> 6.13.0)
+  - Firebase/Auth (~> 6.13.0)
+  - Firebase/Firestore (~> 6.13.0)
+  - FirebaseFirestoreSwift (~> 0.2)
+  - PromisesSwift (~> 1.2.8)
   - Sentry (from `https://github.com/getsentry/sentry-cocoa.git`, tag `4.4.1`)
   - SwiftDate (~> 6.0)
-  - SwiftFormat/CLI
-  - SwiftLint
-  - SwiftyPickerPopover
+  - SwiftFormat/CLI (~> 0.40.14)
+  - SwiftLint (~> 0.36.0)
+  - SwiftyPickerPopover (~> 6.6.6)
 
 SPEC REPOS:
   trunk:
@@ -379,6 +379,6 @@ SPEC CHECKSUMS:
   SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
   SwiftyPickerPopover: a402960a6687c911ffcb4e9fb282a1bc61186ab4
 
-PODFILE CHECKSUM: 92ec59a3999b5c81d845d31e81cd3147b1e1a141
+PODFILE CHECKSUM: a64cd9522f1976d99f68b8ae286c69e99818f571
 
 COCOAPODS: 1.8.4

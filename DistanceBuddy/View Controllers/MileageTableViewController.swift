@@ -165,7 +165,7 @@ class MileageTableViewController: UITableViewController {
         }
 
         let edit = UITableViewRowAction(style: .default, title: "Edit") { _, indexPath in
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Distance", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "DistanceVC") as? UINavigationController
             let cell = self.cells[indexPath.row - self.defaultCells.count]
             (vc?.viewControllers[0] as? DistanceViewController)?.title = "Edit Distance"
