@@ -28,6 +28,8 @@
 		B961A9322370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */; };
 		B961A9342370F29C0074FFE1 /* WorkoutTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */; };
 		B961A9362370F6070074FFE1 /* WorkoutTypeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961A9352370F6070074FFE1 /* WorkoutTypeDelegate.swift */; };
+		B967B3D523A3ACFB00646E2E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967B3D423A3ACFB00646E2E /* ProfileViewController.swift */; };
+		B967B3D723A3AD0D00646E2E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B967B3D623A3AD0D00646E2E /* Profile.storyboard */; };
 		B96B926E239DA081003F2480 /* LoginAndSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B926D239DA081003F2480 /* LoginAndSignupViewController.swift */; };
 		B97314F4238203C1002901DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B97314F3238203C1002901DB /* GoogleService-Info.plist */; };
 		B979CB0C237728AD0084BB9B /* DistanceBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B979CB0B237728AD0084BB9B /* DistanceBuddyTests.swift */; };
@@ -79,6 +81,8 @@
 		B961A9312370DCCE0074FFE1 /* WorkoutTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeTableViewCell.swift; sourceTree = "<group>"; };
 		B961A9332370F29C0074FFE1 /* WorkoutTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeModel.swift; sourceTree = "<group>"; };
 		B961A9352370F6070074FFE1 /* WorkoutTypeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeDelegate.swift; sourceTree = "<group>"; };
+		B967B3D423A3ACFB00646E2E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B967B3D623A3AD0D00646E2E /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B96B926D239DA081003F2480 /* LoginAndSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupViewController.swift; sourceTree = "<group>"; };
 		B97314F3238203C1002901DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B979CB09237728AD0084BB9B /* DistanceBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistanceBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +185,7 @@
 				B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */,
 				B961A92B236F2ACB0074FFE1 /* DistanceViewController.swift */,
 				B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */,
+				B967B3D423A3ACFB00646E2E /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				B92E4BC52368E659002E5966 /* Distance.storyboard */,
 				B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */,
 				B924A1452395BD7E00361DE2 /* LoginAndSignup.storyboard */,
+				B967B3D623A3AD0D00646E2E /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				B924A1462395BD7E00361DE2 /* LoginAndSignup.storyboard in Resources */,
 				B97314F4238203C1002901DB /* GoogleService-Info.plist in Resources */,
 				B95E60E1236E2B9D00DCD1C3 /* Podfile in Resources */,
+				B967B3D723A3AD0D00646E2E /* Profile.storyboard in Resources */,
 				B92E4BC72368E659002E5966 /* Distance.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +506,7 @@
 				B9EEC7E5239DAA5E0001CAF2 /* SignupViewController.swift in Sources */,
 				B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */,
 				B95E60D5236DF82900DCD1C3 /* MileageModel.swift in Sources */,
+				B967B3D523A3ACFB00646E2E /* ProfileViewController.swift in Sources */,
 				B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */,
 				B9F3BFC42372E66700AAECC9 /* MileageDefaultTableViewCell.swift in Sources */,
 			);

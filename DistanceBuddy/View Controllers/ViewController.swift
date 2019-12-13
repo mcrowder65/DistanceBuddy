@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener { _, _ in
             if Auth.auth().currentUser != nil {
-                let newBtn = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: #selector(self.signout))
+                let newBtn = UIBarButtonItem(title: "Profile", style: .plain, target: self, action: #selector(self.goToProfile))
                 self.navigationItem.leftItemsSupplementBackButton = true
                 self.navigationItem.leftBarButtonItem = newBtn
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.add))
@@ -45,6 +45,14 @@ class ViewController: UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "LoginAndSignup", bundle: nil)
 
         if let vc = storyboard.instantiateViewController(withIdentifier: "MainLoginSignupStoryboard") as? UINavigationController {
+            navigationController?.present(vc, animated: true, completion: nil)
+        }
+    }
+
+    @objc func goToProfile() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+
+        if let vc = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as? UINavigationController {
             navigationController?.present(vc, animated: true, completion: nil)
         }
     }
