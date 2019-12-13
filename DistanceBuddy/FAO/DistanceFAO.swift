@@ -31,10 +31,10 @@ class DistanceFAO: FAO {
         }
     }
 
-    func subscribe(_ complete: @escaping (FirebaseModel, DocumentChangeType) -> Void) {
+    func subscribe(_ complete: @escaping (FirebaseModel, DocumentChangeType) -> Void) -> ListenerRegistration {
         let user = Auth.auth().currentUser
 
-        db.collection("distances").whereField("userId", isEqualTo: user?.uid ?? "")
+        return db.collection("distances").whereField("userId", isEqualTo: user?.uid ?? "")
             .addSnapshotListener { querySnapshot, _ in
                 querySnapshot?.documentChanges.forEach { diff in
                     let data = diff.document.data()

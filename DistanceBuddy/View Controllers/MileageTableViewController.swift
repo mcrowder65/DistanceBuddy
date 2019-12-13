@@ -7,13 +7,16 @@
 //
 
 import CoreData
+import Firebase
 import FirebaseCore
 import FirebaseFirestore
 import Promises
 import UIKit
+
 class MileageTableViewController: UITableViewController {
     let distanceFao: DistanceFAO = DistanceFAO()
     var db: Firestore!
+    var subscription: ListenerRegistration?
     var running: DefaultCellModel = DefaultCellModel(title: "Running Distance", year: 0, month: 0, week: 0) {
         didSet {
             defaultCells[0] = running
@@ -49,7 +52,7 @@ class MileageTableViewController: UITableViewController {
         ]
     }()
 
-    @objc private func refresh(_: Any) {
+    @objc private func refresh() {
         getMilesForDefaultCells {
             self.getMilesForCustomCells {
                 self.refreshControl?.endRefreshing()
@@ -57,11 +60,8 @@ class MileageTableViewController: UITableViewController {
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: UIControl.Event.valueChanged)
-        getMilesForDefaultCells(nil)
-        distanceFao.subscribe { mileageModel, type in
+    func setupSubscription() {
+        subscription = distanceFao.subscribe { mileageModel, type in
             let mileage = mileageModel as! MileageModel
             if type == .added {
                 mileage.getMiles { result in
@@ -103,12 +103,23 @@ class MileageTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        // This makes it so there are no extra empty cells displayed
-        tableView.tableFooterView = UIView()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Auth.auth().addStateDidChangeListener { _, _ in
+            self.subscription?.remove()
+            if Auth.auth().currentUser == nil {
+                self.cells = []
+            } else {
+                self.setupSubscription()
+            }
+        }
+        refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        getMilesForDefaultCells(nil)
+        setupSubscription()
+        // This makes it so there are no extra empty cells displayed
+        tableView.tableFooterView = UIView()
     }
 
     func getMilesForDefaultCells(_ complete: (() -> Void)?) {

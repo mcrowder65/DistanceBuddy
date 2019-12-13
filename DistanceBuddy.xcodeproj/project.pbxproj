@@ -11,8 +11,6 @@
 		2B551CF576A8D619651127EB /* Pods_DistanceBuddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91247BB641A08E692386EEE6 /* Pods_DistanceBuddyTests.framework */; };
 		B901E0752371909400EC6E4B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B901E0742371909400EC6E4B /* Utilities.swift */; };
 		B924A1462395BD7E00361DE2 /* LoginAndSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B924A1452395BD7E00361DE2 /* LoginAndSignup.storyboard */; };
-		B924A1482395BFE000361DE2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B924A1472395BFE000361DE2 /* MainViewController.swift */; };
-		B924A14A2395C0D600361DE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B924A1492395C0D600361DE2 /* Main.storyboard */; };
 		B92E4BC02368E659002E5966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BBF2368E659002E5966 /* AppDelegate.swift */; };
 		B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BC12368E659002E5966 /* SceneDelegate.swift */; };
 		B92E4BC42368E659002E5966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E4BC32368E659002E5966 /* ViewController.swift */; };
@@ -61,8 +59,6 @@
 		989B391D780FB644EAD0C864 /* Pods_DistanceBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistanceBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B901E0742371909400EC6E4B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B924A1452395BD7E00361DE2 /* LoginAndSignup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndSignup.storyboard; sourceTree = "<group>"; };
-		B924A1472395BFE000361DE2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		B924A1492395C0D600361DE2 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B92E4BBC2368E659002E5966 /* DistanceBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92E4BBF2368E659002E5966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B92E4BC12368E659002E5966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,7 +181,6 @@
 				B95E60D0236DF42200DCD1C3 /* MileageTableViewController.swift */,
 				B961A92B236F2ACB0074FFE1 /* DistanceViewController.swift */,
 				B961A92F2370DBBA0074FFE1 /* WorkoutTypeTableViewController.swift */,
-				B924A1472395BFE000361DE2 /* MainViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -216,7 +211,6 @@
 				B92E4BC52368E659002E5966 /* Distance.storyboard */,
 				B92E4BCA2368E65A002E5966 /* LaunchScreen.storyboard */,
 				B924A1452395BD7E00361DE2 /* LoginAndSignup.storyboard */,
-				B924A1492395C0D600361DE2 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -355,7 +349,6 @@
 				B97314F4238203C1002901DB /* GoogleService-Info.plist in Resources */,
 				B95E60E1236E2B9D00DCD1C3 /* Podfile in Resources */,
 				B92E4BC72368E659002E5966 /* Distance.storyboard in Resources */,
-				B924A14A2395C0D600361DE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +501,6 @@
 				B95E60D5236DF82900DCD1C3 /* MileageModel.swift in Sources */,
 				B92E4BC22368E659002E5966 /* SceneDelegate.swift in Sources */,
 				B9F3BFC42372E66700AAECC9 /* MileageDefaultTableViewCell.swift in Sources */,
-				B924A1482395BFE000361DE2 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
